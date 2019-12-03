@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainViewController" customModule="GitHubSearchUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJh-pt-nrk">
+                                <rect key="frame" x="0.0" y="44" width="414" height="409"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NhG-j0-rhI">
+                                        <rect key="frame" x="41.5" y="204.5" width="331" height="82"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <state key="normal" title="GitHub Search">
+                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="NhG-j0-rhI" firstAttribute="height" secondItem="UJh-pt-nrk" secondAttribute="height" multiplier="0.2" id="HbI-oT-mPj"/>
+                                    <constraint firstItem="NhG-j0-rhI" firstAttribute="width" secondItem="UJh-pt-nrk" secondAttribute="width" multiplier="0.8" id="ZqW-H4-U5T"/>
+                                    <constraint firstItem="NhG-j0-rhI" firstAttribute="centerX" secondItem="UJh-pt-nrk" secondAttribute="centerX" id="bua-a2-brj"/>
+                                    <constraint firstItem="NhG-j0-rhI" firstAttribute="top" secondItem="UJh-pt-nrk" secondAttribute="centerY" id="dhh-Mo-KLm"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s4g-My-3ZZ">
+                                <rect key="frame" x="0.0" y="453" width="414" height="409"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvS-Fr-Ygp">
+                                        <rect key="frame" x="41.5" y="122.5" width="331" height="82"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <state key="normal" title="Meeting Room">
+                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="bvS-Fr-Ygp" firstAttribute="centerX" secondItem="s4g-My-3ZZ" secondAttribute="centerX" id="6oF-oi-mnA"/>
+                                    <constraint firstItem="bvS-Fr-Ygp" firstAttribute="height" secondItem="s4g-My-3ZZ" secondAttribute="height" multiplier="0.2" id="SBy-Ev-1Pt"/>
+                                    <constraint firstItem="bvS-Fr-Ygp" firstAttribute="width" secondItem="s4g-My-3ZZ" secondAttribute="width" multiplier="0.8" id="TzW-58-SL3"/>
+                                    <constraint firstItem="bvS-Fr-Ygp" firstAttribute="bottom" secondItem="s4g-My-3ZZ" secondAttribute="centerY" id="Yrw-3Z-Mxo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="UJh-pt-nrk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="04c-g6-WfL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="s4g-My-3ZZ" secondAttribute="bottom" id="2MB-np-cKj"/>
+                            <constraint firstItem="s4g-My-3ZZ" firstAttribute="top" secondItem="UJh-pt-nrk" secondAttribute="bottom" id="9kt-b7-57X"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="s4g-My-3ZZ" secondAttribute="trailing" id="IDP-PV-83e"/>
+                            <constraint firstItem="s4g-My-3ZZ" firstAttribute="height" secondItem="UJh-pt-nrk" secondAttribute="height" id="QwK-8Z-1aT"/>
+                            <constraint firstItem="UJh-pt-nrk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="b9q-bi-WgR"/>
+                            <constraint firstItem="s4g-My-3ZZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="y8m-f3-M4D"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UJh-pt-nrk" secondAttribute="trailing" id="zlM-6s-8HQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="gitHubSearchButton" destination="NhG-j0-rhI" id="WOg-xh-nO3"/>
+                        <outlet property="meetingRoomButton" destination="bvS-Fr-Ygp" id="Qsf-vL-HKO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="-1"/>
+        </scene>
+    </scenes>
+</document>

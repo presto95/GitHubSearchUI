@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nhE-tb-Age">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Meeting Room View Controller-->
+        <scene sceneID="EqB-53-0hN">
+            <objects>
+                <viewController storyboardIdentifier="MeetingRoomViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nhE-tb-Age" customClass="MeetingRoomViewController" customModule="GitHubSearchUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qCz-lI-tTi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dio-21-UqJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="zcK-lf-PMw"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zX0-s8-iae">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xub-ie-sAr">
+                                <rect key="frame" x="0.0" y="124" width="414" height="118"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="118" id="Hcf-2m-MM4"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ghx-MI-Rea">
+                                <rect key="frame" x="0.0" y="242" width="414" height="18"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="bfR-e5-KTd"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdg-TP-Gzj">
+                                <rect key="frame" x="0.0" y="260" width="414" height="636"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="hdg-TP-Gzj" secondAttribute="bottom" id="244-Dh-yPD"/>
+                            <constraint firstItem="Ghx-MI-Rea" firstAttribute="leading" secondItem="mh7-kM-15Q" secondAttribute="leading" id="2gu-0c-TsA"/>
+                            <constraint firstItem="Ghx-MI-Rea" firstAttribute="top" secondItem="Xub-ie-sAr" secondAttribute="bottom" id="41W-th-tws"/>
+                            <constraint firstItem="mh7-kM-15Q" firstAttribute="trailing" secondItem="Xub-ie-sAr" secondAttribute="trailing" id="5Dr-9R-sdt"/>
+                            <constraint firstItem="hdg-TP-Gzj" firstAttribute="leading" secondItem="mh7-kM-15Q" secondAttribute="leading" id="8No-hI-dca"/>
+                            <constraint firstItem="hdg-TP-Gzj" firstAttribute="top" secondItem="Ghx-MI-Rea" secondAttribute="bottom" id="AYo-kz-kCo"/>
+                            <constraint firstItem="mh7-kM-15Q" firstAttribute="trailing" secondItem="Ghx-MI-Rea" secondAttribute="trailing" id="FEE-ZK-nea"/>
+                            <constraint firstAttribute="trailing" secondItem="zX0-s8-iae" secondAttribute="trailing" id="Jwp-qG-xxF"/>
+                            <constraint firstItem="Dio-21-UqJ" firstAttribute="leading" secondItem="mh7-kM-15Q" secondAttribute="leading" id="NuF-to-sKt"/>
+                            <constraint firstItem="Dio-21-UqJ" firstAttribute="top" secondItem="zX0-s8-iae" secondAttribute="bottom" id="QGk-gk-vRD"/>
+                            <constraint firstItem="Xub-ie-sAr" firstAttribute="leading" secondItem="mh7-kM-15Q" secondAttribute="leading" id="Qeg-dT-6dU"/>
+                            <constraint firstItem="Xub-ie-sAr" firstAttribute="top" secondItem="Dio-21-UqJ" secondAttribute="bottom" id="V76-dW-7hC"/>
+                            <constraint firstItem="mh7-kM-15Q" firstAttribute="trailing" secondItem="hdg-TP-Gzj" secondAttribute="trailing" id="X7z-t3-w1l"/>
+                            <constraint firstItem="Dio-21-UqJ" firstAttribute="top" secondItem="mh7-kM-15Q" secondAttribute="top" id="YpL-9C-Cf3"/>
+                            <constraint firstItem="zX0-s8-iae" firstAttribute="leading" secondItem="qCz-lI-tTi" secondAttribute="leading" id="ewA-Vj-gEi"/>
+                            <constraint firstItem="zX0-s8-iae" firstAttribute="top" secondItem="qCz-lI-tTi" secondAttribute="top" id="nv3-D3-U4R"/>
+                            <constraint firstItem="Dio-21-UqJ" firstAttribute="trailing" secondItem="mh7-kM-15Q" secondAttribute="trailing" id="xwV-He-Vd1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mh7-kM-15Q"/>
+                    </view>
+                    <connections>
+                        <outlet property="availableMeetingRoomContainerView" destination="Xub-ie-sAr" id="cJI-0Y-oRw"/>
+                        <outlet property="filteringContainerView" destination="Ghx-MI-Rea" id="JMF-UP-ula"/>
+                        <outlet property="navigationBarContainerView" destination="Dio-21-UqJ" id="Hgy-rK-Dav"/>
+                        <outlet property="reservationRoomTableContainerView" destination="hdg-TP-Gzj" id="AaR-bK-4HZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XAg-p8-vf2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="386.95652173913044" y="-489.50892857142856"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="gCv-pA-k7s" customClass="MeetingRoomTableView" customModule="GitHubSearchUI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sFa-G1-LIm">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="sFa-G1-LIm" secondAttribute="bottom" id="Ext-kp-3M6"/>
+                <constraint firstItem="sFa-G1-LIm" firstAttribute="leading" secondItem="gCv-pA-k7s" secondAttribute="leading" id="My1-06-uiW"/>
+                <constraint firstAttribute="trailing" secondItem="sFa-G1-LIm" secondAttribute="trailing" id="c7h-cT-go3"/>
+                <constraint firstItem="sFa-G1-LIm" firstAttribute="top" secondItem="gCv-pA-k7s" secondAttribute="top" id="wxM-Rg-zEU"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="tWI-Ne-rpF"/>
+            <connections>
+                <outlet property="tableView" destination="sFa-G1-LIm" id="Ein-BV-wce"/>
+            </connections>
+            <point key="canvasLocation" x="299" y="-39"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AvailableMeetingRoomCell" customModule="GitHubSearchUI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="91" height="41"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="91" height="41"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{ name }" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uux-yw-mvE">
+                        <rect key="frame" x="10" y="9" width="71" height="23"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="uux-yw-mvE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="9" id="9A2-1k-Xky"/>
+                <constraint firstItem="uux-yw-mvE" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="HlQ-ta-MAI"/>
+                <constraint firstItem="uux-yw-mvE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="MOT-kf-tVp"/>
+                <constraint firstItem="uux-yw-mvE" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Sqd-az-Kz3"/>
+                <constraint firstAttribute="trailing" secondItem="uux-yw-mvE" secondAttribute="trailing" constant="10" id="pLS-DL-fjE"/>
+                <constraint firstAttribute="bottom" secondItem="uux-yw-mvE" secondAttribute="bottom" constant="9" id="zPE-cv-Rmz"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="91" height="41"/>
+            <connections>
+                <outlet property="meetingRoomNameLabel" destination="uux-yw-mvE" id="h8B-YY-Kbb"/>
+            </connections>
+            <point key="canvasLocation" x="167.39130434782609" y="148.32589285714286"/>
+        </collectionViewCell>
+    </objects>
+</document>
