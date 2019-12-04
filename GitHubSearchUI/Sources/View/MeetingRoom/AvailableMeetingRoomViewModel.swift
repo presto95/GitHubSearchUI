@@ -25,7 +25,7 @@ protocol AvailableMeetingRoomViewModelInputProtocol {
 protocol AvailableMeetingRoomViewModelOutputProtocol {
   var availableMeetingRoomNames: Observable<[String]> { get }
 
-  var availableMeetingRoomCountString: Observable<String> { get }
+  var numberOfAvailableMeetingRoomsString: Observable<String> { get }
 }
 
 final class AvailableMeetingRoomViewModel {
@@ -50,7 +50,7 @@ extension AvailableMeetingRoomViewModel: AvailableMeetingRoomViewModelOutputProt
       .map { $0.names }
   }
 
-  var availableMeetingRoomCountString: Observable<String> {
+  var numberOfAvailableMeetingRoomsString: Observable<String> {
     return availableMeetingRoomNames
       .map { $0.count }
       .map { "\($0)" }

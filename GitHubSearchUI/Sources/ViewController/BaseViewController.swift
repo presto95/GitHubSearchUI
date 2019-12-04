@@ -16,10 +16,10 @@ class BaseViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setup()
-    bind()
+    bindViewModel()
   }
 
   func setup() {}
 
-  func bind() {}
+  func bindViewModel() {}
 }

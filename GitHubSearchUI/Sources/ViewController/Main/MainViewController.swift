@@ -22,7 +22,7 @@ final class MainViewController: BaseViewController {
     meetingRoomButton.layer.cornerRadius = meetingRoomButton.bounds.height / 2
   }
 
-  override func bind() {
+  override func bindViewModel() {
     gitHubSearchButton.rx.tap
       .compactMap {
         ViewControllerFactory.instantiate(from: .gitHubSearch, instantiatingType: .initial)?.then {

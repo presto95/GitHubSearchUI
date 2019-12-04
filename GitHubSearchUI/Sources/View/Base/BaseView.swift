@@ -20,5 +20,5 @@ class BaseView: UIView {
 
   func setup() {}
 
-  func bind() {}
+  func bindViewModel() {}
 }

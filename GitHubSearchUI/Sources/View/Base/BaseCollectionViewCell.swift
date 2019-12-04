@@ -20,5 +20,5 @@ class BaseCollectionViewCell: UICollectionViewCell {
 
   func setup() {}
 
-  func bind() {}
+  func bindViewModel() {}
 }

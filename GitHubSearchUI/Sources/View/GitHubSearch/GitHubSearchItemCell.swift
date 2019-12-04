@@ -17,7 +17,11 @@ final class GitHubSearchItemCell: BaseTableViewCell {
   @IBOutlet private var scoreLabel: UILabel!
   @IBOutlet private var isFavoriteImageView: UIImageView!
 
-  override func awakeFromNib() {
-    super.awakeFromNib()
+  override func setup() {
+
+  }
+
+  override func prepareForReuse() {
+    super.prepareForReuse()
   }
 }

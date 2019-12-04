@@ -20,5 +20,5 @@ class BaseTableViewCell: UITableViewCell {
 
   func setup() {}
 
-  func bind() {}
+  func bindViewModel() {}
 }

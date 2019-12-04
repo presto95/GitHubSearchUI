@@ -16,18 +16,20 @@ final class MeetingRoomTableView: BaseView {
 
   var viewModel: MeetingRoomTableViewModelProtocol! {
     didSet {
-      bind()
+      bindViewModel()
     }
   }
 
   override func setup() {
     tableView.do {
       $0.register(MeetingRoomTableCell.self)
-      $0.contentInset = .init(top: 0, left: 15, bottom: 0, right: 15)
+      $0.contentInset = .init(top: -5, left: 0, bottom: 0, right: 0)
+//      $0.rx.setDelegate(self)
+//        .disposed(by: disposeBag)
     }
   }
 
-  override func bind() {
+  override func bindViewModel() {
     Observable.just(Void())
       .subscribe(onNext: { [weak self] in
         self?.viewModel.input.setMeetingRoomInfo(MeetingRoomInfo.dummy)

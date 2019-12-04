@@ -19,11 +19,11 @@ final class ReusableNavigationBar: BaseView {
 
   var viewModel: ReusableNavigationBarModel! {
     didSet {
-      bind()
+      bindViewModel()
     }
   }
 
-  override func bind() {
+  override func bindViewModel() {
     viewModel.output.dateString
       .bind(to: dateLabel.rx.text)
       .disposed(by: disposeBag)

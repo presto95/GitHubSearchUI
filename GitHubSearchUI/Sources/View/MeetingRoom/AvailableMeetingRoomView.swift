@@ -17,18 +17,25 @@ final class AvailableMeetingRoomView: BaseView {
 
   var viewModel: AvailableMeetingRoomViewModelProtocol! {
     didSet {
-      bind()
+      bindViewModel()
     }
   }
 
   override func setup() {
+    let layout = UICollectionViewFlowLayout().then {
+      $0.scrollDirection = .horizontal
+      $0.estimatedItemSize = .init(width: 100, height: 46)
+      $0.minimumLineSpacing = 0
+      $0.minimumInteritemSpacing = 0
+    }
     collectionView.do {
-      $0.contentInset = .init(top: 0, left: 15, bottom: 0, right: 15)
+      $0.contentInset = .init(top: 0, left: 13, bottom: 0, right: 13)
       $0.register(AvailableMeetingRoomCell.self)
+      $0.collectionViewLayout = layout
     }
   }
 
-  override func bind() {
+  override func bindViewModel() {
     Observable.just(Void())
       .subscribe(onNext: { [weak self] in
         self?.viewModel.input.setAvailableMeetingRooms(.dummy)
@@ -36,13 +43,13 @@ final class AvailableMeetingRoomView: BaseView {
       .disposed(by: disposeBag)
 
     viewModel.output.availableMeetingRoomNames
-      .bind(to: collectionView.rx.items(AvailableMeetingRoomCell.self)) { row, element, cell in
+      .bind(to: collectionView.rx.items(AvailableMeetingRoomCell.self)) { _, element, cell in
         cell.configure(with: element)
+        cell.setNeedsLayout()
       }
       .disposed(by: disposeBag)
 
-    viewModel.output.availableMeetingRoomCountString
-      .map { "\($0)" }
+    viewModel.output.numberOfAvailableMeetingRoomsString
       .bind(to: availableMeetingRoomCountLabel.rx.text)
       .disposed(by: disposeBag)
   }

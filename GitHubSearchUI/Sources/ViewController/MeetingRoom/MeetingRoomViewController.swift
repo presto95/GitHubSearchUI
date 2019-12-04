@@ -34,7 +34,7 @@ final class MeetingRoomViewController: BaseViewController {
     reservationRoomTableContainerView.addSubview(meetingRoomTableView) { $0.edges.equalToSuperview() }
   }
 
-  override func bind() {
+  override func bindViewModel() {
     navigationBar.rx.exitButtonDidTap
       .bind(to: rx.dismiss())
       .disposed(by: disposeBag)
