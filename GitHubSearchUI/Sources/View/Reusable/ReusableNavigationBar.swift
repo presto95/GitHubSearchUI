@@ -24,9 +24,19 @@ final class ReusableNavigationBar: BaseView {
   }
 
   override func bindViewModel() {
+    Observable.just(Void())
+      .subscribe(onNext: { [weak self] in
+        self?.viewModel.input.setDate(.init())
+      })
+      .disposed(by: disposeBag)
+
     viewModel.output.dateString
       .bind(to: dateLabel.rx.text)
       .disposed(by: disposeBag)
+  }
+
+  func configure(with date: Date) {
+    viewModel.input.setDate(date)
   }
 }
 

@@ -29,7 +29,7 @@ final class AvailableMeetingRoomView: BaseView {
       $0.minimumInteritemSpacing = 0
     }
     collectionView.do {
-      $0.contentInset = .init(top: 0, left: 13, bottom: 0, right: 13)
+      $0.contentInset = .horizontal(13)
       $0.register(AvailableMeetingRoomCell.self)
       $0.collectionViewLayout = layout
     }
@@ -38,14 +38,13 @@ final class AvailableMeetingRoomView: BaseView {
   override func bindViewModel() {
     Observable.just(Void())
       .subscribe(onNext: { [weak self] in
-        self?.viewModel.input.setAvailableMeetingRooms(.dummy)
+        self?.viewModel.input.setAvailableMeetingRooms(DummyData.availableMeetingRooms)
       })
       .disposed(by: disposeBag)
 
     viewModel.output.availableMeetingRoomNames
       .bind(to: collectionView.rx.items(AvailableMeetingRoomCell.self)) { _, element, cell in
         cell.configure(with: element)
-        cell.setNeedsLayout()
       }
       .disposed(by: disposeBag)
 

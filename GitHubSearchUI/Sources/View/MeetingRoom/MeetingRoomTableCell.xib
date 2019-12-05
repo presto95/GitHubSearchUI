@@ -37,7 +37,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aev-2l-Vqx">
-                                <rect key="frame" x="281" y="10.5" width="22" height="22"/>
+                                <rect key="frame" x="289" y="10.5" width="22" height="22"/>
                                 <state key="normal" image="question"/>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Msu-Bg-lZJ">
@@ -286,7 +286,7 @@
                             <constraint firstAttribute="bottom" secondItem="Msu-Bg-lZJ" secondAttribute="bottom" constant="10" id="eDa-2j-WcY"/>
                             <constraint firstItem="Msu-Bg-lZJ" firstAttribute="top" secondItem="OEQ-Yc-khi" secondAttribute="bottom" constant="8" id="fe0-gK-GHj"/>
                             <constraint firstItem="Msu-Bg-lZJ" firstAttribute="top" secondItem="NfJ-Z0-mFO" secondAttribute="bottom" constant="8" id="gNw-hT-jQ9"/>
-                            <constraint firstAttribute="trailing" secondItem="aev-2l-Vqx" secondAttribute="trailing" constant="20" id="if3-q4-K1v"/>
+                            <constraint firstAttribute="trailing" secondItem="aev-2l-Vqx" secondAttribute="trailing" constant="12" id="if3-q4-K1v"/>
                             <constraint firstItem="OEQ-Yc-khi" firstAttribute="trailing" secondItem="Ihh-4U-4Ox" secondAttribute="centerX" id="j0g-CY-k30"/>
                             <constraint firstItem="Msu-Bg-lZJ" firstAttribute="top" secondItem="ViL-o2-CNJ" secondAttribute="bottom" constant="8" id="kXA-yq-i2p"/>
                             <constraint firstItem="Msu-Bg-lZJ" firstAttribute="top" secondItem="Fph-gE-uHR" secondAttribute="bottom" constant="8" id="mHS-e5-SPS"/>

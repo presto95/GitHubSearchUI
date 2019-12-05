@@ -12,10 +12,10 @@ import RxCocoa
 import RxSwift
 
 extension Reactive where Base: UITableView {
-  func items<Sequence: Swift.Sequence, Cell: UITableViewCell, Source: ObservableType>(_ cellType: Cell.Type)
+  func items<Sequence: Swift.Sequence, Cell: UITableViewCell, Source: ObservableType>(_ type: Cell.Type)
     -> (_ source: Source)
     -> (_ configureCell: @escaping (Int, Sequence.Element, Cell) -> Void)
     -> Disposable where Source.Element == Sequence {
-      return items(cellIdentifier: Cell.name, cellType: Cell.self)
+    return items(cellIdentifier: type.name, cellType: type)
   }
 }

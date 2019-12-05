@@ -8,11 +8,14 @@
 
 import UIKit
 
+import RxRelay
 import RxSwift
 
 final class RadioButtonGroup: UIStackView {
   private var radioButtons = [RadioButton]()
   private var disposeBag = DisposeBag()
+
+  fileprivate let selectedIndexRelay = BehaviorRelay<Int>(value: 0)
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -26,9 +29,10 @@ final class RadioButtonGroup: UIStackView {
 
   var selectedIndex: Int {
     get {
-      return radioButtons.firstIndex { $0.isSelected == true }!
+      return selectedIndexRelay.value
     }
     set {
+      selectedIndexRelay.accept(newValue)
       selectRadioButton(at: newValue)
     }
   }
@@ -39,21 +43,32 @@ final class RadioButtonGroup: UIStackView {
 
   func setRadioButtons(_ radioButtons: [RadioButton], selectedIndex: Int) {
     disposeBag = .init()
+    
     radioButtons.forEach { removeArrangedSubview($0) }
     self.radioButtons = radioButtons
     radioButtons.enumerated().forEach { index, radioButton in
-      radioButton.rx.radioButtonDidTap
-        .subscribe(onNext: { [weak self] in
-          self?.selectRadioButton(at: index)
-        })
-        .disposed(by: disposeBag)
       addArrangedSubview(radioButton)
+      bindRadioButton(radioButton, index: index)
     }
     selectRadioButton(at: selectedIndex)
+  }
+
+  private func bindRadioButton(_ button: RadioButton, index: Int) {
+    button.rx.radioButtonDidTap
+      .subscribe(onNext: { [weak self] in
+        self?.selectRadioButton(at: index)
+      })
+      .disposed(by: disposeBag)
   }
 
   private func selectRadioButton(at index: Int) {
     radioButtons.forEach { $0.isSelected = false }
     radioButtons[index].isSelected = true
+  }
+}
+
+extension Reactive where Base: RadioButtonGroup {
+  var selectedIndex: Observable<Int> {
+    return base.selectedIndexRelay.asObservable()
   }
 }

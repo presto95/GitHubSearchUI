@@ -12,7 +12,7 @@ import RxSwift
 
 class BaseTableViewCell: UITableViewCell {
   var disposeBag = DisposeBag()
-  
+
   override func awakeFromNib() {
     super.awakeFromNib()
     setup()

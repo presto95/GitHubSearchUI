@@ -2,13 +2,13 @@
 //  MeetingRoomModel.swift
 //  GitHubSearchUI
 //
-//  Created by Presto on 2019/12/03.
+//  Created by Presto on 2019/12/05.
 //  Copyright © 2019 presto. All rights reserved.
 //
 
 import Foundation
 
-struct MeetingRoomInfo: Decodable {
+struct MeetingRoomModel: Decodable {
   struct Reservation: Decodable {
     let startTime: String
 
@@ -22,7 +22,7 @@ struct MeetingRoomInfo: Decodable {
   let reservations: [Reservation]
 }
 
-extension MeetingRoomInfo.Reservation {
+extension MeetingRoomModel.Reservation {
   var startHour: Int {
     let hourString = startTime[startTime.startIndex ..< startTime.index(startTime.startIndex, offsetBy: 2)]
     return Int(hourString)!
@@ -44,10 +44,3 @@ extension MeetingRoomInfo.Reservation {
   }
 }
 
-extension MeetingRoomInfo {
-  static let dummy: [MeetingRoomInfo] = {
-    let dataURL = Bundle.main.url(forResource: "meeting_room", withExtension: "json")!
-    let data = try! Data(contentsOf: dataURL)
-    return try! JSONDecoder().decode([MeetingRoomInfo].self, from: data)
-  }()
-}

@@ -15,17 +15,11 @@ protocol MeetingRoomViewModelProtocol {
   var output: MeetingRoomViewModelOutputProtocol { get }
 }
 
-protocol MeetingRoomViewModelInputProtocol {
+protocol MeetingRoomViewModelInputProtocol {}
 
-}
+protocol MeetingRoomViewModelOutputProtocol {}
 
-protocol MeetingRoomViewModelOutputProtocol {
-
-}
-
-final class MeetingRoomViewModel {
-
-}
+final class MeetingRoomViewModel {}
 
 extension MeetingRoomViewModel: MeetingRoomViewModelProtocol {
   var input: MeetingRoomViewModelInputProtocol { return self }
@@ -33,10 +27,6 @@ extension MeetingRoomViewModel: MeetingRoomViewModelProtocol {
   var output: MeetingRoomViewModelOutputProtocol { return self }
 }
 
-extension MeetingRoomViewModel: MeetingRoomViewModelInputProtocol {
+extension MeetingRoomViewModel: MeetingRoomViewModelInputProtocol {}
 
-}
-
-extension MeetingRoomViewModel: MeetingRoomViewModelOutputProtocol {
-
-}
+extension MeetingRoomViewModel: MeetingRoomViewModelOutputProtocol {}

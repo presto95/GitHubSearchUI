@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GitHubSearchItemCell" rowHeight="91" id="Iw0-88-W6i" customClass="GitHubSearchItemCell" customModule="GitHubSearchUI" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="GitHubSearchItemCell" rowHeight="91" id="Iw0-88-W6i" customClass="GitHubSearchItemCell" customModule="GitHubSearchUI" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="91"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Iw0-88-W6i" id="VZL-FE-pYL">
@@ -22,45 +22,50 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{ score }" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMi-gI-4c4">
-                        <rect key="frame" x="103" y="45.5" width="64" height="37.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="103" y="45.5" width="57" height="37.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XUh-Og-w6e">
-                        <rect key="frame" x="366.5" y="32" width="27.5" height="27"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="XUh-Og-w6e" secondAttribute="height" id="Mbh-gS-Voe"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{ name }" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiV-A4-u2E">
-                        <rect key="frame" x="103" y="8" width="64" height="37.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="103" y="8" width="75" height="37.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xpi-Ho-XNX">
+                        <rect key="frame" x="354" y="25.5" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Xpi-Ho-XNX" secondAttribute="height" id="BZw-qe-9Ae"/>
+                            <constraint firstAttribute="width" constant="40" id="bUb-V9-2AK"/>
+                        </constraints>
+                        <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" image="star" catalog="system"/>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Xpi-Ho-XNX" firstAttribute="centerY" secondItem="Wl8-vg-eyE" secondAttribute="centerY" id="GiD-so-Rs1"/>
                     <constraint firstItem="Wl8-vg-eyE" firstAttribute="leading" secondItem="VZL-FE-pYL" secondAttribute="leading" constant="20" id="HSz-y1-UX1"/>
+                    <constraint firstAttribute="trailing" secondItem="Xpi-Ho-XNX" secondAttribute="trailing" constant="20" id="M6D-rM-VtI"/>
                     <constraint firstItem="YiV-A4-u2E" firstAttribute="leading" secondItem="Wl8-vg-eyE" secondAttribute="trailing" constant="8" id="Ofw-UI-cgH"/>
                     <constraint firstItem="ZMi-gI-4c4" firstAttribute="top" secondItem="Wl8-vg-eyE" secondAttribute="centerY" id="PsM-cy-jMf"/>
                     <constraint firstItem="Wl8-vg-eyE" firstAttribute="top" secondItem="VZL-FE-pYL" secondAttribute="top" constant="8" id="Qr5-ms-3kS"/>
                     <constraint firstItem="YiV-A4-u2E" firstAttribute="top" secondItem="Wl8-vg-eyE" secondAttribute="top" id="Qx9-Pf-hr4"/>
                     <constraint firstAttribute="bottom" secondItem="Wl8-vg-eyE" secondAttribute="bottom" constant="8" id="R0Q-GE-Pcf"/>
                     <constraint firstItem="YiV-A4-u2E" firstAttribute="bottom" secondItem="Wl8-vg-eyE" secondAttribute="centerY" id="S92-Cf-GYo"/>
-                    <constraint firstItem="XUh-Og-w6e" firstAttribute="height" secondItem="VZL-FE-pYL" secondAttribute="height" multiplier="0.3" id="U2J-rs-ffJ"/>
                     <constraint firstItem="ZMi-gI-4c4" firstAttribute="bottom" secondItem="Wl8-vg-eyE" secondAttribute="bottom" id="URa-m7-8CZ"/>
                     <constraint firstItem="ZMi-gI-4c4" firstAttribute="leading" secondItem="Wl8-vg-eyE" secondAttribute="trailing" constant="8" id="s9v-Vk-eNx"/>
-                    <constraint firstAttribute="trailing" secondItem="XUh-Og-w6e" secondAttribute="trailing" constant="20" id="x4U-7q-q2U"/>
-                    <constraint firstItem="XUh-Og-w6e" firstAttribute="centerY" secondItem="VZL-FE-pYL" secondAttribute="centerY" id="znA-dg-TVg"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="avatarImageView" destination="Wl8-vg-eyE" id="CIx-8E-1D6"/>
-                <outlet property="isFavoriteImageView" destination="XUh-Og-w6e" id="RTh-Fx-PW5"/>
+                <outlet property="isFavoriteButton" destination="Xpi-Ho-XNX" id="Ums-V5-4yh"/>
                 <outlet property="nameLabel" destination="YiV-A4-u2E" id="XVd-xW-Th8"/>
                 <outlet property="scoreLabel" destination="ZMi-gI-4c4" id="gMu-b1-Jnp"/>
             </connections>
             <point key="canvasLocation" x="47.826086956521742" y="36.495535714285715"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="star" catalog="system" width="64" height="58"/>
+    </resources>
 </document>

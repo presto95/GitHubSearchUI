@@ -19,7 +19,6 @@
 		194F1BF12396730900F95A6E /* GitHubSearchFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1BF02396730900F95A6E /* GitHubSearchFavoriteViewController.swift */; };
 		194F1BF3239674B900F95A6E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1BF2239674B900F95A6E /* BaseViewController.swift */; };
 		194F1BF8239675BE00F95A6E /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1BF7239675BE00F95A6E /* NSObject+.swift */; };
-		194F1BFD2396764800F95A6E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1BFC2396764800F95A6E /* Constant.swift */; };
 		194F1C05239679D000F95A6E /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C04239679D000F95A6E /* Storyboards.swift */; };
 		194F1C0723967BB300F95A6E /* Reactive+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C0623967BB300F95A6E /* Reactive+UIViewController.swift */; };
 		194F1C0923967CF900F95A6E /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C0823967CF900F95A6E /* ViewControllerFactory.swift */; };
@@ -32,7 +31,6 @@
 		194F1C1A239684F500F95A6E /* GitHubSearchItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C19239684F500F95A6E /* GitHubSearchItemCell.swift */; };
 		194F1C1C2396883900F95A6E /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C1B2396883900F95A6E /* BaseTableViewCell.swift */; };
 		194F1C1F239688E400F95A6E /* GitHubSearchUsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C1E239688E400F95A6E /* GitHubSearchUsersResponse.swift */; };
-		194F1C2123968B4200F95A6E /* MeetingRoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C2023968B4200F95A6E /* MeetingRoomModel.swift */; };
 		194F1C2323968F7400F95A6E /* ReusableNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C2223968F7400F95A6E /* ReusableNavigationBar.swift */; };
 		194F1C2523968F8600F95A6E /* ReusableNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194F1C2423968F8600F95A6E /* ReusableNavigationBar.xib */; };
 		194F1C2723968FF300F95A6E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C2623968FF300F95A6E /* BaseView.swift */; };
@@ -52,7 +50,6 @@
 		194F1C502396ADF500F95A6E /* RadioButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194F1C4F2396ADF500F95A6E /* RadioButton.xib */; };
 		194F1C522396AE0300F95A6E /* RadioButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C512396AE0300F95A6E /* RadioButtonGroup.swift */; };
 		194F1C542396AE0B00F95A6E /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C532396AE0B00F95A6E /* RadioButton.swift */; };
-		194F1C562396BAF100F95A6E /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C552396BAF100F95A6E /* UIView+.swift */; };
 		194F1C582396C70400F95A6E /* UIView+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C572396C70300F95A6E /* UIView+SnapKit.swift */; };
 		194F1C5A2396CAD400F95A6E /* ReusableNavigationBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C592396CAD400F95A6E /* ReusableNavigationBarModel.swift */; };
 		194F1C5C2396CBF400F95A6E /* MeetingRoomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C5B2396CBF400F95A6E /* MeetingRoomTableView.swift */; };
@@ -64,6 +61,21 @@
 		199F941B23978A510060E273 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F941A23978A510060E273 /* CALayer+.swift */; };
 		199F941D2397DFD00060E273 /* CurrentTimePointerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 199F941C2397DFD00060E273 /* CurrentTimePointerView.xib */; };
 		199F94212397E1EF0060E273 /* CurrentTimePointerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F94202397E1EF0060E273 /* CurrentTimePointerView.swift */; };
+		199F94242397E6AD0060E273 /* GitHubSearchUsersTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F94232397E6AD0060E273 /* GitHubSearchUsersTarget.swift */; };
+		199F94262397E7210060E273 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F94252397E7210060E273 /* NetworkManager.swift */; };
+		199F94282397E74E0060E273 /* TargetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F94272397E74E0060E273 /* TargetProtocol.swift */; };
+		199F942C2397E7840060E273 /* TargetVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F942B2397E7840060E273 /* TargetVersion.swift */; };
+		199F942E23980A3D0060E273 /* GitHubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F942D23980A3D0060E273 /* GitHubUser.swift */; };
+		199F943023980C480060E273 /* GitHubSearchTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F942F23980C480060E273 /* GitHubSearchTabBarController.swift */; };
+		199F94322398DE0F0060E273 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F94312398DE0F0060E273 /* DummyData.swift */; };
+		199F94342398E12D0060E273 /* MeetingRoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F94332398E12D0060E273 /* MeetingRoomModel.swift */; };
+		199F94362398E1B10060E273 /* UIEdgeInsets+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F94352398E1B10060E273 /* UIEdgeInsets+.swift */; };
+		199F94382398E4100060E273 /* Locale+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F94372398E4100060E273 /* Locale+.swift */; };
+		199F943A23990FB20060E273 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F943923990FB20060E273 /* GitHubAPI.swift */; };
+		199F943C2399179F0060E273 /* Result+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F943B2399179F0060E273 /* Result+.swift */; };
+		199F9440239930890060E273 /* PersistenceManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F943F239930890060E273 /* PersistenceManagerProtocol.swift */; };
+		199F9444239932540060E273 /* AlertControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F9443239932540060E273 /* AlertControllerBuilder.swift */; };
+		199F944623995B3F0060E273 /* GitHubFavoriteUserFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F944523995B3F0060E273 /* GitHubFavoriteUserFileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,7 +92,6 @@
 		194F1BF02396730900F95A6E /* GitHubSearchFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchFavoriteViewController.swift; sourceTree = "<group>"; };
 		194F1BF2239674B900F95A6E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		194F1BF7239675BE00F95A6E /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
-		194F1BFC2396764800F95A6E /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		194F1C04239679D000F95A6E /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		194F1C0623967BB300F95A6E /* Reactive+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+UIViewController.swift"; sourceTree = "<group>"; };
 		194F1C0823967CF900F95A6E /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -93,7 +104,6 @@
 		194F1C19239684F500F95A6E /* GitHubSearchItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchItemCell.swift; sourceTree = "<group>"; };
 		194F1C1B2396883900F95A6E /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		194F1C1E239688E400F95A6E /* GitHubSearchUsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchUsersResponse.swift; sourceTree = "<group>"; };
-		194F1C2023968B4200F95A6E /* MeetingRoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingRoomModel.swift; sourceTree = "<group>"; };
 		194F1C2223968F7400F95A6E /* ReusableNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableNavigationBar.swift; sourceTree = "<group>"; };
 		194F1C2423968F8600F95A6E /* ReusableNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReusableNavigationBar.xib; sourceTree = "<group>"; };
 		194F1C2623968FF300F95A6E /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -113,7 +123,6 @@
 		194F1C4F2396ADF500F95A6E /* RadioButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RadioButton.xib; sourceTree = "<group>"; };
 		194F1C512396AE0300F95A6E /* RadioButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonGroup.swift; sourceTree = "<group>"; };
 		194F1C532396AE0B00F95A6E /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
-		194F1C552396BAF100F95A6E /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		194F1C572396C70300F95A6E /* UIView+SnapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SnapKit.swift"; sourceTree = "<group>"; };
 		194F1C592396CAD400F95A6E /* ReusableNavigationBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableNavigationBarModel.swift; sourceTree = "<group>"; };
 		194F1C5B2396CBF400F95A6E /* MeetingRoomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingRoomTableView.swift; sourceTree = "<group>"; };
@@ -125,6 +134,21 @@
 		199F941A23978A510060E273 /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		199F941C2397DFD00060E273 /* CurrentTimePointerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentTimePointerView.xib; sourceTree = "<group>"; };
 		199F94202397E1EF0060E273 /* CurrentTimePointerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTimePointerView.swift; sourceTree = "<group>"; };
+		199F94232397E6AD0060E273 /* GitHubSearchUsersTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchUsersTarget.swift; sourceTree = "<group>"; };
+		199F94252397E7210060E273 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		199F94272397E74E0060E273 /* TargetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetProtocol.swift; sourceTree = "<group>"; };
+		199F942B2397E7840060E273 /* TargetVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetVersion.swift; sourceTree = "<group>"; };
+		199F942D23980A3D0060E273 /* GitHubUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUser.swift; sourceTree = "<group>"; };
+		199F942F23980C480060E273 /* GitHubSearchTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchTabBarController.swift; sourceTree = "<group>"; };
+		199F94312398DE0F0060E273 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		199F94332398E12D0060E273 /* MeetingRoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingRoomModel.swift; sourceTree = "<group>"; };
+		199F94352398E1B10060E273 /* UIEdgeInsets+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+.swift"; sourceTree = "<group>"; };
+		199F94372398E4100060E273 /* Locale+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+.swift"; sourceTree = "<group>"; };
+		199F943923990FB20060E273 /* GitHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPI.swift; sourceTree = "<group>"; };
+		199F943B2399179F0060E273 /* Result+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+.swift"; sourceTree = "<group>"; };
+		199F943F239930890060E273 /* PersistenceManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManagerProtocol.swift; sourceTree = "<group>"; };
+		199F9443239932540060E273 /* AlertControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerBuilder.swift; sourceTree = "<group>"; };
+		199F944523995B3F0060E273 /* GitHubFavoriteUserFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubFavoriteUserFileManager.swift; sourceTree = "<group>"; };
 		5909979A903DE730286EB24B /* Pods_GitHubSearchUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubSearchUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B293DAAFADDCAC920DB184C6 /* Pods-GitHubSearchUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSearchUI.debug.xcconfig"; path = "Target Support Files/Pods-GitHubSearchUI/Pods-GitHubSearchUI.debug.xcconfig"; sourceTree = "<group>"; };
 		CC8471FE0C4AC9E696932DB2 /* Pods-GitHubSearchUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSearchUI.release.xcconfig"; path = "Target Support Files/Pods-GitHubSearchUI/Pods-GitHubSearchUI.release.xcconfig"; sourceTree = "<group>"; };
@@ -192,13 +216,13 @@
 		194F1BE5239671D300F95A6E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				199F944723995BA80060E273 /* Utility */,
+				199F943D239930720060E273 /* Service */,
 				194F1C1D239688DC00F95A6E /* Model */,
 				194F1C16239684D000F95A6E /* View */,
 				194F1C0C239680B500F95A6E /* ViewController */,
 				194F1BFB2396764200F95A6E /* Common */,
 				194F1BF6239675B700F95A6E /* Extension */,
-				194F1C0823967CF900F95A6E /* ViewControllerFactory.swift */,
-				194F1C0A23967D3600F95A6E /* ViewFactory.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -212,9 +236,11 @@
 				194F1C3F2396A64B00F95A6E /* UITableView+.swift */,
 				194F1C452396A92400F95A6E /* Reactive+UICollectionView.swift */,
 				194F1C472396A9FC00F95A6E /* Reactive+UITableView.swift */,
-				194F1C552396BAF100F95A6E /* UIView+.swift */,
 				194F1C572396C70300F95A6E /* UIView+SnapKit.swift */,
 				199F941A23978A510060E273 /* CALayer+.swift */,
+				199F94352398E1B10060E273 /* UIEdgeInsets+.swift */,
+				199F94372398E4100060E273 /* Locale+.swift */,
+				199F943B2399179F0060E273 /* Result+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -222,7 +248,6 @@
 		194F1BFB2396764200F95A6E /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				194F1BFC2396764800F95A6E /* Constant.swift */,
 				194F1C04239679D000F95A6E /* Storyboards.swift */,
 			);
 			path = Common;
@@ -254,8 +279,10 @@
 			isa = PBXGroup;
 			children = (
 				194F1C1E239688E400F95A6E /* GitHubSearchUsersResponse.swift */,
-				194F1C2023968B4200F95A6E /* MeetingRoomModel.swift */,
 				194F1C432396A7E800F95A6E /* AvailableMeetingRoomModel.swift */,
+				199F942D23980A3D0060E273 /* GitHubUser.swift */,
+				199F94332398E12D0060E273 /* MeetingRoomModel.swift */,
+				199F94312398DE0F0060E273 /* DummyData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				194F1BE62396729200F95A6E /* GitHubSearch.storyboard */,
+				199F942F23980C480060E273 /* GitHubSearchTabBarController.swift */,
 				194F1BEE2396730300F95A6E /* GitHubSearchMainViewController.swift */,
 				194F1C122396835600F95A6E /* GitHubSearchMainViewModel.swift */,
 				194F1BF02396730900F95A6E /* GitHubSearchFavoriteViewController.swift */,
@@ -324,9 +352,9 @@
 		194F1C4D2396ADC200F95A6E /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				194F1C2423968F8600F95A6E /* ReusableNavigationBar.xib */,
 				194F1C2223968F7400F95A6E /* ReusableNavigationBar.swift */,
 				194F1C592396CAD400F95A6E /* ReusableNavigationBarModel.swift */,
-				194F1C2423968F8600F95A6E /* ReusableNavigationBar.xib */,
 				194F1C4F2396ADF500F95A6E /* RadioButton.xib */,
 				194F1C532396AE0B00F95A6E /* RadioButton.swift */,
 				194F1C512396AE0300F95A6E /* RadioButtonGroup.swift */,
@@ -342,6 +370,46 @@
 				194F1C392396A37000F95A6E /* BaseCollectionViewCell.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		199F94222397E5510060E273 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				199F94232397E6AD0060E273 /* GitHubSearchUsersTarget.swift */,
+				199F94252397E7210060E273 /* NetworkManager.swift */,
+				199F94272397E74E0060E273 /* TargetProtocol.swift */,
+				199F942B2397E7840060E273 /* TargetVersion.swift */,
+				199F943923990FB20060E273 /* GitHubAPI.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		199F943D239930720060E273 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				199F943E2399307B0060E273 /* Persistence */,
+				199F94222397E5510060E273 /* Network */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		199F943E2399307B0060E273 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				199F943F239930890060E273 /* PersistenceManagerProtocol.swift */,
+				199F944523995B3F0060E273 /* GitHubFavoriteUserFileManager.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		199F944723995BA80060E273 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				194F1C0823967CF900F95A6E /* ViewControllerFactory.swift */,
+				194F1C0A23967D3600F95A6E /* ViewFactory.swift */,
+				199F9443239932540060E273 /* AlertControllerBuilder.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		408F39A223475B855356164D /* Frameworks */ = {
@@ -490,23 +558,36 @@
 			files = (
 				194F1C602396CCE900F95A6E /* MeetingRoomTableViewModel.swift in Sources */,
 				194F1C542396AE0B00F95A6E /* RadioButton.swift in Sources */,
+				199F9444239932540060E273 /* AlertControllerBuilder.swift in Sources */,
 				194F1C3E2396A5EF00F95A6E /* UICollectionView+.swift in Sources */,
 				199F94212397E1EF0060E273 /* CurrentTimePointerView.swift in Sources */,
-				194F1C2123968B4200F95A6E /* MeetingRoomModel.swift in Sources */,
+				199F943C2399179F0060E273 /* Result+.swift in Sources */,
 				194F1C442396A7E800F95A6E /* AvailableMeetingRoomModel.swift in Sources */,
+				199F944623995B3F0060E273 /* GitHubFavoriteUserFileManager.swift in Sources */,
+				199F94282397E74E0060E273 /* TargetProtocol.swift in Sources */,
+				199F942C2397E7840060E273 /* TargetVersion.swift in Sources */,
 				194F1C4C2396AD2800F95A6E /* MeetingRoomFilteringView.swift in Sources */,
 				194F1C5C2396CBF400F95A6E /* MeetingRoomTableView.swift in Sources */,
 				194F1C112396833800F95A6E /* MeetingRoomViewModel.swift in Sources */,
 				194F1BEF2396730300F95A6E /* GitHubSearchMainViewController.swift in Sources */,
 				194F1BF12396730900F95A6E /* GitHubSearchFavoriteViewController.swift in Sources */,
+				199F9440239930890060E273 /* PersistenceManagerProtocol.swift in Sources */,
 				194F1C5A2396CAD400F95A6E /* ReusableNavigationBarModel.swift in Sources */,
 				194F1C1C2396883900F95A6E /* BaseTableViewCell.swift in Sources */,
 				194F1C05239679D000F95A6E /* Storyboards.swift in Sources */,
+				199F94322398DE0F0060E273 /* DummyData.swift in Sources */,
 				199F941B23978A510060E273 /* CALayer+.swift in Sources */,
 				194F1C522396AE0300F95A6E /* RadioButtonGroup.swift in Sources */,
 				194F1C402396A64B00F95A6E /* UITableView+.swift in Sources */,
+				199F94382398E4100060E273 /* Locale+.swift in Sources */,
+				199F943023980C480060E273 /* GitHubSearchTabBarController.swift in Sources */,
+				199F94342398E12D0060E273 /* MeetingRoomModel.swift in Sources */,
 				194F1C0723967BB300F95A6E /* Reactive+UIViewController.swift in Sources */,
+				199F94262397E7210060E273 /* NetworkManager.swift in Sources */,
+				199F942E23980A3D0060E273 /* GitHubUser.swift in Sources */,
+				199F94362398E1B10060E273 /* UIEdgeInsets+.swift in Sources */,
 				194F1C372396A33E00F95A6E /* AvailableMeetingRoomCell.swift in Sources */,
+				199F94242397E6AD0060E273 /* GitHubSearchUsersTarget.swift in Sources */,
 				194F1C342396999000F95A6E /* AvailableMeetingRoomView.swift in Sources */,
 				194F1C462396A92400F95A6E /* Reactive+UICollectionView.swift in Sources */,
 				194F1C0923967CF900F95A6E /* ViewControllerFactory.swift in Sources */,
@@ -520,14 +601,13 @@
 				194F1C0B23967D3600F95A6E /* ViewFactory.swift in Sources */,
 				194F1BD4239671A100F95A6E /* MainViewController.swift in Sources */,
 				194F1C152396837500F95A6E /* GitHubSearchFavoriteViewModel.swift in Sources */,
-				194F1C562396BAF100F95A6E /* UIView+.swift in Sources */,
 				194F1BF8239675BE00F95A6E /* NSObject+.swift in Sources */,
 				194F1C2323968F7400F95A6E /* ReusableNavigationBar.swift in Sources */,
-				194F1BFD2396764800F95A6E /* Constant.swift in Sources */,
 				194F1C1F239688E400F95A6E /* GitHubSearchUsersResponse.swift in Sources */,
 				194F1C582396C70400F95A6E /* UIView+SnapKit.swift in Sources */,
 				194F1BD0239671A100F95A6E /* AppDelegate.swift in Sources */,
 				194F1C482396A9FC00F95A6E /* Reactive+UITableView.swift in Sources */,
+				199F943A23990FB20060E273 /* GitHubAPI.swift in Sources */,
 				194F1BF3239674B900F95A6E /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

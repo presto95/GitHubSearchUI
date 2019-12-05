@@ -22,6 +22,7 @@ final class MeetingRoomViewController: BaseViewController {
   private var availableMeetingRoomView = ViewFactory.instantiate(AvailableMeetingRoomView.self)!.then {
     $0.viewModel = AvailableMeetingRoomViewModel()
   }
+
   private var meetingRoomFilteringView = ViewFactory.instantiate(MeetingRoomFilteringView.self)!
   private var meetingRoomTableView = ViewFactory.instantiate(MeetingRoomTableView.self)!.then { $0.viewModel = MeetingRoomTableViewModel() }
 

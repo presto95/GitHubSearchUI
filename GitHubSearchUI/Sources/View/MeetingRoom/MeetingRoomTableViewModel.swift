@@ -16,15 +16,15 @@ protocol MeetingRoomTableViewModelProtocol {
 }
 
 protocol MeetingRoomTableViewModelInputProtocol {
-  func setMeetingRoomInfo(_ model: [MeetingRoomInfo])
+  func setMeetingRoomInfo(_ model: [MeetingRoomModel])
 }
 
 protocol MeetingRoomTableViewModelOutputProtocol {
-  var meetingRoomInfo: Observable<[MeetingRoomInfo]> { get }
+  var meetingRoomInfo: Observable<[MeetingRoomModel]> { get }
 }
 
 final class MeetingRoomTableViewModel {
-  private let meetingRoomInfoRelay = BehaviorRelay<[MeetingRoomInfo]?>(value: nil)
+  private let meetingRoomInfoRelay = BehaviorRelay<[MeetingRoomModel]?>(value: nil)
 }
 
 extension MeetingRoomTableViewModel: MeetingRoomTableViewModelProtocol {
@@ -34,13 +34,13 @@ extension MeetingRoomTableViewModel: MeetingRoomTableViewModelProtocol {
 }
 
 extension MeetingRoomTableViewModel: MeetingRoomTableViewModelInputProtocol {
-  func setMeetingRoomInfo(_ model: [MeetingRoomInfo]) {
+  func setMeetingRoomInfo(_ model: [MeetingRoomModel]) {
     meetingRoomInfoRelay.accept(model)
   }
 }
 
 extension MeetingRoomTableViewModel: MeetingRoomTableViewModelOutputProtocol {
-  var meetingRoomInfo: Observable<[MeetingRoomInfo]> {
+  var meetingRoomInfo: Observable<[MeetingRoomModel]> {
     return meetingRoomInfoRelay.compactMap { $0 }
   }
 }

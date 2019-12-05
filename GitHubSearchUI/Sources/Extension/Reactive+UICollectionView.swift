@@ -16,6 +16,6 @@ extension Reactive where Base: UICollectionView {
     -> (_ source: Source)
     -> (_ configureCell: @escaping (Int, Sequence.Element, Cell) -> Void)
     -> Disposable where Source.Element == Sequence {
-      return items(cellIdentifier: Cell.name, cellType: Cell.self)
+    return items(cellIdentifier: type.name, cellType: type)
   }
 }

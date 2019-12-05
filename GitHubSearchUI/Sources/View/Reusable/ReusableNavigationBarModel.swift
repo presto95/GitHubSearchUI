@@ -43,6 +43,7 @@ extension ReusableNavigationBarModel: ReusableNavigationBarModelOutputProtocol {
   var dateString: Observable<String> {
     let formatter = DateFormatter().then {
       $0.dateFormat = "MM월 dd일 (eee)"
+      $0.locale = .korea
     }
     return dateRelay.compactMap { $0 }
       .map { formatter.string(from: $0) }

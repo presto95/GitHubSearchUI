@@ -16,15 +16,21 @@ protocol GitHubSearchFavoriteViewModelProtocol {
 }
 
 protocol GitHubSearchFavoriteViewModelInputProtocol {
-
+  func setFavoriteUsers()
 }
 
 protocol GitHubSearchFavoriteViewModelOutputProtocol {
-
+  var favoriteUsers: Observable<[GitHubUser]> { get }
 }
 
 final class GitHubSearchFavoriteViewModel {
+  private let favoriteUsersRelay = BehaviorRelay<[GitHubUser]?>(value: nil)
 
+  private let persistenceManager: PersistenceManagerProtocol
+
+  init(persistenceManager: PersistenceManagerProtocol = GitHubFavoriteUserFileManager()) {
+    self.persistenceManager = persistenceManager
+  }
 }
 
 extension GitHubSearchFavoriteViewModel: GitHubSearchFavoriteViewModelProtocol {
@@ -34,9 +40,14 @@ extension GitHubSearchFavoriteViewModel: GitHubSearchFavoriteViewModelProtocol {
 }
 
 extension GitHubSearchFavoriteViewModel: GitHubSearchFavoriteViewModelInputProtocol {
-
+  func setFavoriteUsers() {
+    let savedData: [GitHubUser]? = try? persistenceManager.read()
+    favoriteUsersRelay.accept(savedData ?? [])
+  }
 }
 
 extension GitHubSearchFavoriteViewModel: GitHubSearchFavoriteViewModelOutputProtocol {
-
+  var favoriteUsers: Observable<[GitHubUser]> {
+    return favoriteUsersRelay.compactMap { $0 }
+  }
 }

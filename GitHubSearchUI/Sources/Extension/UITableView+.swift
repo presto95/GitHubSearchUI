@@ -13,4 +13,3 @@ extension UITableView {
     register(.init(nibName: type.name, bundle: nil), forCellReuseIdentifier: type.name)
   }
 }
-
