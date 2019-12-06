@@ -16,6 +16,7 @@ final class GitHubSearchMainViewController: BaseViewController {
   @IBOutlet private var exitButton: UIBarButtonItem!
   @IBOutlet private var tableView: UITableView!
 
+  private var indicatorView: UIActivityIndicatorView!
   private let searchController = UISearchController(searchResultsController: nil)
 
   private var searchBar: UISearchBar {
@@ -29,6 +30,12 @@ final class GitHubSearchMainViewController: BaseViewController {
     searchBar.placeholder = "Username"
     tableView.register(GitHubSearchItemCell.self)
     navigationItem.searchController = searchController
+    indicatorView = UIActivityIndicatorView(style: .large).then {
+      $0.color = .label
+      $0.hidesWhenStopped = true
+      $0.stopAnimating()
+    }
+    view.addSubview(indicatorView) { $0.center.equalToSuperview() }
   }
 
   override func bindViewModel() {
@@ -44,6 +51,7 @@ final class GitHubSearchMainViewController: BaseViewController {
 
     viewModel.output.searchResults
       .bind(to: tableView.rx.items(GitHubSearchItemCell.self)) { _, model, cell in
+        cell.viewModel = GitHubSearchItemCellModel()
         cell.configure(with: model)
       }
       .disposed(by: disposeBag)
@@ -55,6 +63,16 @@ final class GitHubSearchMainViewController: BaseViewController {
           .action(title: "확인")
           .build()
         self?.present(alertController, animated: true, completion: nil)
+      })
+      .disposed(by: disposeBag)
+
+    viewModel.output.isLoading
+      .subscribe(onNext: { [weak self] isLoading in
+        if isLoading {
+          self?.indicatorView.startAnimating()
+        } else {
+          self?.indicatorView.stopAnimating()
+        }
       })
       .disposed(by: disposeBag)
   }

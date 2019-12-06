@@ -20,12 +20,16 @@ protocol GitHubSearchMainViewModelInputProtocol {
 }
 
 protocol GitHubSearchMainViewModelOutputProtocol {
+  var isLoading: Observable<Bool> { get }
+
   var searchResults: Observable<[GitHubUser]> { get }
 
   var searchDidFail: Observable<Error> { get }
 }
 
 final class GitHubSearchMainViewModel {
+  private let isLoadingRelay = BehaviorRelay<Bool?>(value: nil)
+
   private let searchTextRelay = BehaviorRelay<String?>(value: nil)
 
   private let searchResultRelay = BehaviorRelay<Result<[GitHubUser], Error>?>(value: nil)
@@ -39,10 +43,12 @@ final class GitHubSearchMainViewModel {
 
     searchTextRelay
       .compactMap { $0 }
-      .filter { !$0.isEmpty }
       .distinctUntilChanged()
       .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
+      .filter { !$0.isEmpty }
+      .do(onNext: { _ in self.isLoadingRelay.accept(true) })
       .flatMap { self.gitHubAPI.users(query: $0, ascending: false) }
+      .do(onNext: { _ in self.isLoadingRelay.accept(false) })
       .bind(to: searchResultRelay)
       .disposed(by: disposeBag)
   }
@@ -61,6 +67,10 @@ extension GitHubSearchMainViewModel: GitHubSearchMainViewModelInputProtocol {
 }
 
 extension GitHubSearchMainViewModel: GitHubSearchMainViewModelOutputProtocol {
+  var isLoading: Observable<Bool> {
+    return isLoadingRelay.compactMap { $0 }
+  }
+
   var searchResults: Observable<[GitHubUser]> {
     return searchResultRelay.compactMap { $0 }
       .compactMap { $0.success }

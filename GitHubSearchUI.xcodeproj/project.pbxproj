@@ -76,6 +76,8 @@
 		199F9440239930890060E273 /* PersistenceManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F943F239930890060E273 /* PersistenceManagerProtocol.swift */; };
 		199F9444239932540060E273 /* AlertControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F9443239932540060E273 /* AlertControllerBuilder.swift */; };
 		199F944623995B3F0060E273 /* GitHubFavoriteUserFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F944523995B3F0060E273 /* GitHubFavoriteUserFileManager.swift */; };
+		199F944B239A41A60060E273 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F944A239A41A60060E273 /* Cache.swift */; };
+		199F944E239A47750060E273 /* GitHubSearchItemCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F944D239A47750060E273 /* GitHubSearchItemCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,6 +151,8 @@
 		199F943F239930890060E273 /* PersistenceManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManagerProtocol.swift; sourceTree = "<group>"; };
 		199F9443239932540060E273 /* AlertControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerBuilder.swift; sourceTree = "<group>"; };
 		199F944523995B3F0060E273 /* GitHubFavoriteUserFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubFavoriteUserFileManager.swift; sourceTree = "<group>"; };
+		199F944A239A41A60060E273 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		199F944D239A47750060E273 /* GitHubSearchItemCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchItemCellModel.swift; sourceTree = "<group>"; };
 		5909979A903DE730286EB24B /* Pods_GitHubSearchUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubSearchUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B293DAAFADDCAC920DB184C6 /* Pods-GitHubSearchUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSearchUI.debug.xcconfig"; path = "Target Support Files/Pods-GitHubSearchUI/Pods-GitHubSearchUI.debug.xcconfig"; sourceTree = "<group>"; };
 		CC8471FE0C4AC9E696932DB2 /* Pods-GitHubSearchUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSearchUI.release.xcconfig"; path = "Target Support Files/Pods-GitHubSearchUI/Pods-GitHubSearchUI.release.xcconfig"; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 		194F1BE5239671D300F95A6E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				199F944C239A43510060E273 /* Protocol */,
 				199F944723995BA80060E273 /* Utility */,
 				199F943D239930720060E273 /* Service */,
 				194F1C1D239688DC00F95A6E /* Model */,
@@ -324,6 +329,7 @@
 			children = (
 				194F1C17239684E700F95A6E /* GitHubSearchItemCell.xib */,
 				194F1C19239684F500F95A6E /* GitHubSearchItemCell.swift */,
+				199F944D239A47750060E273 /* GitHubSearchItemCellModel.swift */,
 			);
 			path = GitHubSearch;
 			sourceTree = "<group>";
@@ -387,6 +393,7 @@
 		199F943D239930720060E273 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				199F9449239A419A0060E273 /* Cache */,
 				199F943E2399307B0060E273 /* Persistence */,
 				199F94222397E5510060E273 /* Network */,
 			);
@@ -410,6 +417,21 @@
 				199F9443239932540060E273 /* AlertControllerBuilder.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		199F9449239A419A0060E273 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				199F944A239A41A60060E273 /* Cache.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		199F944C239A43510060E273 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		408F39A223475B855356164D /* Frameworks */ = {
@@ -558,6 +580,7 @@
 			files = (
 				194F1C602396CCE900F95A6E /* MeetingRoomTableViewModel.swift in Sources */,
 				194F1C542396AE0B00F95A6E /* RadioButton.swift in Sources */,
+				199F944E239A47750060E273 /* GitHubSearchItemCellModel.swift in Sources */,
 				199F9444239932540060E273 /* AlertControllerBuilder.swift in Sources */,
 				194F1C3E2396A5EF00F95A6E /* UICollectionView+.swift in Sources */,
 				199F94212397E1EF0060E273 /* CurrentTimePointerView.swift in Sources */,
@@ -566,6 +589,7 @@
 				199F944623995B3F0060E273 /* GitHubFavoriteUserFileManager.swift in Sources */,
 				199F94282397E74E0060E273 /* TargetProtocol.swift in Sources */,
 				199F942C2397E7840060E273 /* TargetVersion.swift in Sources */,
+				199F944B239A41A60060E273 /* Cache.swift in Sources */,
 				194F1C4C2396AD2800F95A6E /* MeetingRoomFilteringView.swift in Sources */,
 				194F1C5C2396CBF400F95A6E /* MeetingRoomTableView.swift in Sources */,
 				194F1C112396833800F95A6E /* MeetingRoomViewModel.swift in Sources */,

@@ -40,6 +40,7 @@ final class NetworkManager: NetworkManagerProtocol {
 extension DataRequest {
   func responseDecoded<Decode: Decodable>(to type: Decode.Type, completion: @escaping (DataResponse<Decode>) -> Void) {
     responseData { response in
+      print(response.response?.value(forHTTPHeaderField: "Link"))
       let decodedResult = response.result.map { try! JSONDecoder().decode(type, from: $0) }
       completion(DataResponse(request: response.request, response: response.response, data: response.data, result: decodedResult))
     }
