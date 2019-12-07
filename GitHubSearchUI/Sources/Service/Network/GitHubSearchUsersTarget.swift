@@ -31,9 +31,10 @@ struct GitHubSearchUsersTarget: TargetProtocol {
 
   var parameters: [String : String]?
 
-  init(query: String, sort: String? = nil, order: Order? = nil) {
+  init(query: String, page: Int, sort: String? = nil, order: Order? = nil) {
     var parameters = [String: String]()
     parameters["q"] = query
+    parameters["page"] = "\(page)"
     if let sort = sort {
       parameters["sort"] = sort
     }

@@ -17,6 +17,8 @@ protocol GitHubSearchMainViewModelProtocol {
 
 protocol GitHubSearchMainViewModelInputProtocol {
   func setSearchText(_ text: String)
+
+  func searchMoreUsers()
 }
 
 protocol GitHubSearchMainViewModelOutputProtocol {
@@ -32,6 +34,8 @@ final class GitHubSearchMainViewModel {
 
   private let searchTextRelay = BehaviorRelay<String?>(value: nil)
 
+  private let pageRelay = BehaviorRelay<Int>(value: 1)
+
   private let searchResultRelay = BehaviorRelay<Result<[GitHubUser], Error>?>(value: nil)
 
   private let gitHubAPI: GitHubAPIProtocol
@@ -41,15 +45,35 @@ final class GitHubSearchMainViewModel {
   init(gitHubAPI: GitHubAPIProtocol = GitHubAPI()) {
     self.gitHubAPI = gitHubAPI
 
-    searchTextRelay
+    let searchTextObservable = searchTextRelay
       .compactMap { $0 }
       .distinctUntilChanged()
       .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
       .filter { !$0.isEmpty }
-      .do(onNext: { _ in self.isLoadingRelay.accept(true) })
-      .flatMap { self.gitHubAPI.users(query: $0, ascending: false) }
-      .do(onNext: { _ in self.isLoadingRelay.accept(false) })
-      .bind(to: searchResultRelay)
+
+    Observable.combineLatest(searchTextObservable, pageRelay)
+      .do(onNext: { [weak self] _ in
+        self?.isLoadingRelay.accept(true)
+      })
+      .flatMap { [weak self] in
+        self?.gitHubAPI.users(query: $0, page: $1, ascending: false) ?? .empty()
+      }
+      .do(onNext: { [weak self] _ in
+        self?.isLoadingRelay.accept(false)
+      })
+      .subscribe(onNext: { [weak self] result in
+        switch result {
+        case let .success(success):
+          if let current = self?.searchResultRelay.value?.success {
+            let final = current + success
+            self?.searchResultRelay.accept(.success(final))
+          } else {
+            self?.searchResultRelay.accept(.success(success))
+          }
+        case let .failure(error):
+          self?.searchResultRelay.accept(.failure(error))
+        }
+      })
       .disposed(by: disposeBag)
   }
 }
@@ -62,7 +86,12 @@ extension GitHubSearchMainViewModel: GitHubSearchMainViewModelProtocol {
 
 extension GitHubSearchMainViewModel: GitHubSearchMainViewModelInputProtocol {
   func setSearchText(_ text: String) {
+    resetPage()
     searchTextRelay.accept(text)
+  }
+
+  func searchMoreUsers() {
+    increasePage()
   }
 }
 
@@ -79,5 +108,16 @@ extension GitHubSearchMainViewModel: GitHubSearchMainViewModelOutputProtocol {
   var searchDidFail: Observable<Error> {
     return searchResultRelay.compactMap { $0 }
       .compactMap { $0.failure }
+  }
+}
+
+private extension GitHubSearchMainViewModel {
+  func increasePage() {
+    let currentPage = pageRelay.value
+    pageRelay.accept(currentPage + 1)
+  }
+
+  func resetPage() {
+    pageRelay.accept(1)
   }
 }

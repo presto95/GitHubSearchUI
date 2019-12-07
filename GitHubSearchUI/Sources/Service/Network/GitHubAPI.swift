@@ -13,7 +13,7 @@ import RxSwift
 typealias Result = Swift.Result
 
 protocol GitHubAPIProtocol {
-  func users(query: String, ascending: Bool) -> Observable<Result<[GitHubUser], Error>>
+  func users(query: String, page: Int, ascending: Bool) -> Observable<Result<[GitHubUser], Error>>
 }
 
 final class GitHubAPI: GitHubAPIProtocol {
@@ -23,12 +23,12 @@ final class GitHubAPI: GitHubAPIProtocol {
     self.networkManager = networkManager
   }
 
-  func users(query: String, ascending: Bool) -> Observable<Result<[GitHubUser], Error>> {
-    let target = GitHubSearchUsersTarget(query: query, sort: nil, order: .init(ascending: ascending))
+  func users(query: String, page: Int, ascending: Bool) -> Observable<Result<[GitHubUser], Error>> {
+    let target = GitHubSearchUsersTarget(query: query, page: page, sort: nil, order: .init(ascending: ascending))
     return .create { [weak self] observer in
       self?.networkManager
         .request(target)
-        .responseDecoded(to: GitHubSearchUsersResponse.self) { response in
+        .response(to: GitHubSearchUsersResponse.self) { response in
           let result = response.result
           let mappedResult = result.map { GitHubUser.make(from: $0) }
           switch mappedResult {
@@ -45,7 +45,7 @@ final class GitHubAPI: GitHubAPIProtocol {
 }
 
 final class MockGitHubAPI: GitHubAPIProtocol {
-  func users(query: String, ascending: Bool) -> Observable<Result<[GitHubUser], Error>> {
+  func users(query: String, page: Int, ascending: Bool) -> Observable<Result<[GitHubUser], Error>> {
     return .just(.success(DummyData.gitHubUsers))
   }
 }

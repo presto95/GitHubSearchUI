@@ -45,6 +45,19 @@ final class GitHubSearchMainViewController: BaseViewController {
       })
       .disposed(by: disposeBag)
 
+    tableView.rx.contentOffset
+      .filter { [weak self] offset in
+        guard let self = self else { return false }
+        guard self.tableView.frame.height > 0 else { return false }
+        return offset.y + self.tableView.frame.height >= self.tableView.contentSize.height - 20
+      }
+      .withLatestFrom(viewModel.output.isLoading)
+      .filter { !$0 }
+      .subscribe(onNext: { [weak self] _ in
+        self?.viewModel.input.searchMoreUsers()
+      })
+      .disposed(by: disposeBag)
+
     exitButton.rx.tap
       .bind(to: rx.dismiss())
       .disposed(by: disposeBag)
@@ -67,13 +80,7 @@ final class GitHubSearchMainViewController: BaseViewController {
       .disposed(by: disposeBag)
 
     viewModel.output.isLoading
-      .subscribe(onNext: { [weak self] isLoading in
-        if isLoading {
-          self?.indicatorView.startAnimating()
-        } else {
-          self?.indicatorView.stopAnimating()
-        }
-      })
+      .bind(to: indicatorView.rx.isAnimating)
       .disposed(by: disposeBag)
   }
 }
