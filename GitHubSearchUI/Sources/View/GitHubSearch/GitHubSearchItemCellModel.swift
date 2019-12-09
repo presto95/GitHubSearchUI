@@ -24,14 +24,14 @@ protocol GitHubSearchItemCellModelOutputProtocol {
 final class GitHubSearchItemCellModel {
   private let gitHubFavoriteUserModelRelay = BehaviorRelay<GitHubUser?>(value: nil)
   private let isFavoriteRelay = BehaviorRelay<Bool?>(value: nil)
+
   private let persistenceService = PersistenceService()
 }
 
 extension GitHubSearchItemCellModel: GitHubSearchItemCellModelInputProtocol {
   func setFavoriteUser(_ model: GitHubUser) {
     gitHubFavoriteUserModelRelay.accept(model)
-    let isSaved = !(persistenceService.fetch()?.filter { $0.id == model.id }.isEmpty ?? false)
-    if isSaved {
+    if persistenceService.contains(model) {
       isFavoriteRelay.accept(true)
     } else {
       isFavoriteRelay.accept(false)
@@ -40,8 +40,7 @@ extension GitHubSearchItemCellModel: GitHubSearchItemCellModelInputProtocol {
 
   func updateFavoriteStatus() {
     guard let model = gitHubFavoriteUserModelRelay.value else { return }
-    let isSaved = !(persistenceService.fetch()?.filter { $0.id == model.id }.isEmpty ?? false)
-    if isSaved {
+    if persistenceService.contains(model) {
       persistenceService.delete(model)
       isFavoriteRelay.accept(false)
     } else {

@@ -24,6 +24,7 @@ final class MeetingRoomTableView: BaseView {
     tableView.do {
       $0.register(MeetingRoomTableCell.self)
       $0.contentInset = .top(-5)
+      $0.scrollIndicatorInsets = .top(-5)
     }
   }
 

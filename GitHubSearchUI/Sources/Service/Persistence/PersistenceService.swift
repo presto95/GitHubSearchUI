@@ -34,4 +34,8 @@ final class PersistenceService {
     managedContext.delete(deletingModel)
     try? managedContext.save()
   }
+
+  func contains(_ model: GitHubUser) -> Bool {
+    return !(fetch()?.filter { $0.id == model.id }.isEmpty ?? true)
+  }
 }
