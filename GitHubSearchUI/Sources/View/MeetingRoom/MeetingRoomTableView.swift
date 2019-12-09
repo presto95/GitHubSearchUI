@@ -28,11 +28,7 @@ final class MeetingRoomTableView: BaseView {
   }
 
   override func bindViewModel() {
-    Observable.just(Void())
-      .subscribe(onNext: { [weak self] in
-        self?.viewModel.input.setMeetingRoomInfo(DummyData.meetingRoomModel)
-      })
-      .disposed(by: disposeBag)
+    viewModel.input.setMeetingRoomInfo(DummyData.meetingRoomModel)
 
     viewModel.output.meetingRoomInfo
       .bind(to: tableView.rx.items(MeetingRoomTableCell.self)) { _, model, cell in

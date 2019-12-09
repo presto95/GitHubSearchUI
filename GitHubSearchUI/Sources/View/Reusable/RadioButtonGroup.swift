@@ -41,19 +41,22 @@ final class RadioButtonGroup: UIStackView {
     return radioButtons[index]
   }
 
-  func setRadioButtons(_ radioButtons: [RadioButton], selectedIndex: Int) {
+  func setRadioButtons(_ radioButtons: [RadioButton], initialIndex: Int = 0) {
     disposeBag = .init()
-    
+
     radioButtons.forEach { removeArrangedSubview($0) }
     self.radioButtons = radioButtons
     radioButtons.enumerated().forEach { index, radioButton in
       addArrangedSubview(radioButton)
       bindRadioButton(radioButton, index: index)
     }
-    selectRadioButton(at: selectedIndex)
-  }
 
-  private func bindRadioButton(_ button: RadioButton, index: Int) {
+    selectRadioButton(at: initialIndex)
+  }
+}
+
+private extension RadioButtonGroup {
+  func bindRadioButton(_ button: RadioButton, index: Int) {
     button.rx.radioButtonDidTap
       .subscribe(onNext: { [weak self] in
         self?.selectRadioButton(at: index)
@@ -61,7 +64,7 @@ final class RadioButtonGroup: UIStackView {
       .disposed(by: disposeBag)
   }
 
-  private func selectRadioButton(at index: Int) {
+  func selectRadioButton(at index: Int) {
     radioButtons.forEach { $0.isSelected = false }
     radioButtons[index].isSelected = true
   }

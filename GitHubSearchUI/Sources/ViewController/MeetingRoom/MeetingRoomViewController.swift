@@ -18,21 +18,24 @@ final class MeetingRoomViewController: BaseViewController {
   @IBOutlet private var filteringContainerView: UIView!
   @IBOutlet private var reservationRoomTableContainerView: UIView!
 
-  private var navigationBar = ViewFactory.instantiate(ReusableNavigationBar.self)!.then { $0.viewModel = ReusableNavigationBarModel() }
-  private var availableMeetingRoomView = ViewFactory.instantiate(AvailableMeetingRoomView.self)!.then {
+  private lazy var navigationBar = UIView.instantiate(MeetingRoomNavigationBar.self).then {
+    $0.viewModel = MeetingRoomNavigationBarModel()
+  }
+
+  private lazy var availableMeetingRoomView = UIView.instantiate(AvailableMeetingRoomView.self).then {
     $0.viewModel = AvailableMeetingRoomViewModel()
   }
 
-  private var meetingRoomFilteringView = ViewFactory.instantiate(MeetingRoomFilteringView.self)!
-  private var meetingRoomTableView = ViewFactory.instantiate(MeetingRoomTableView.self)!.then { $0.viewModel = MeetingRoomTableViewModel() }
-
-  var viewModel: MeetingRoomViewModelProtocol!
+  private lazy var meetingRoomFilteringView = UIView.instantiate(MeetingRoomFilteringView.self)
+  private lazy var meetingRoomTableView = UIView.instantiate(MeetingRoomTableView.self).then {
+    $0.viewModel = MeetingRoomTableViewModel()
+  }
 
   override func setup() {
-    navigationBarContainerView.addSubview(navigationBar) { $0.edges.equalToSuperview() }
-    availableMeetingRoomContainerView.addSubview(availableMeetingRoomView) { $0.edges.equalToSuperview() }
-    filteringContainerView.addSubview(meetingRoomFilteringView) { $0.edges.equalToSuperview() }
-    reservationRoomTableContainerView.addSubview(meetingRoomTableView) { $0.edges.equalToSuperview() }
+    navigationBarContainerView.addContentsView(navigationBar)
+    availableMeetingRoomContainerView.addContentsView(availableMeetingRoomView)
+    filteringContainerView.addContentsView(meetingRoomFilteringView)
+    reservationRoomTableContainerView.addContentsView(meetingRoomTableView)
   }
 
   override func bindViewModel() {

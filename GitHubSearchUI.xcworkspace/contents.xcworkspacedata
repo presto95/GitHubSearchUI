@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:GitHubFavoriteUser+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:GitHubFavoriteUser+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:GitHubSearchUI.xcodeproj">
    </FileRef>
    <FileRef

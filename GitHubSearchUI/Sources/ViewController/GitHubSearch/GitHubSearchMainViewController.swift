@@ -70,11 +70,10 @@ final class GitHubSearchMainViewController: BaseViewController {
       .disposed(by: disposeBag)
 
     viewModel.output.searchDidFail
-      .subscribe(onNext: { [weak self] error in
-        let alertController = AlertControllerBuilder()
+      .subscribe(onNext: { [weak self] _ in
+        let alertController = UIAlertController
           .alert(title: "", message: "정보를 불러오지 못했습니다.")
           .action(title: "확인")
-          .build()
         self?.present(alertController, animated: true, completion: nil)
       })
       .disposed(by: disposeBag)

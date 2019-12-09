@@ -20,7 +20,7 @@ struct GitHubSearchUsersResponse: Decodable {
 
     private enum CodingKeys: String, CodingKey {
       case id
-      
+
       case login
 
       case avatarURL = "avatar_url"

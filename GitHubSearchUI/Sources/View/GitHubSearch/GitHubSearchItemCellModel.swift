@@ -9,46 +9,53 @@
 import RxRelay
 import RxSwift
 
-protocol GitHubSearchItemCellModelProtocol {
-  var input: GitHubSearchItemCellModelInputProtocol { get }
-
-  var output: GitHubSearchItemCellModelOutputProtocol { get }
-}
-
 protocol GitHubSearchItemCellModelInputProtocol {
-  func setModel(_ model: GitHubUser)
+  func setFavoriteUser(_ model: GitHubUser)
+  func updateFavoriteStatus()
 }
 
 protocol GitHubSearchItemCellModelOutputProtocol {
   var avatarImageData: Observable<Data> { get }
-
   var name: Observable<String> { get }
-
   var scoreString: Observable<String> { get }
-
   var isFavorite: Observable<Bool> { get }
 }
 
 final class GitHubSearchItemCellModel {
-  private let gitHubUserModelRelay = BehaviorRelay<GitHubUser?>(value: nil)
-}
-
-extension GitHubSearchItemCellModel: GitHubSearchItemCellModelProtocol {
-  var input: GitHubSearchItemCellModelInputProtocol { return self }
-
-  var output: GitHubSearchItemCellModelOutputProtocol { return self }
+  private let gitHubFavoriteUserModelRelay = BehaviorRelay<GitHubUser?>(value: nil)
+  private let isFavoriteRelay = BehaviorRelay<Bool?>(value: nil)
+  private let persistenceService = PersistenceService()
 }
 
 extension GitHubSearchItemCellModel: GitHubSearchItemCellModelInputProtocol {
-  func setModel(_ model: GitHubUser) {
-    gitHubUserModelRelay.accept(model)
+  func setFavoriteUser(_ model: GitHubUser) {
+    gitHubFavoriteUserModelRelay.accept(model)
+    let isSaved = !(persistenceService.fetch()?.filter { $0.id == model.id }.isEmpty ?? false)
+    if isSaved {
+      isFavoriteRelay.accept(true)
+    } else {
+      isFavoriteRelay.accept(false)
+    }
+  }
+
+  func updateFavoriteStatus() {
+    guard let model = gitHubFavoriteUserModelRelay.value else { return }
+    let isSaved = !(persistenceService.fetch()?.filter { $0.id == model.id }.isEmpty ?? false)
+    if isSaved {
+      persistenceService.delete(model)
+      isFavoriteRelay.accept(false)
+    } else {
+      persistenceService.save(model)
+      isFavoriteRelay.accept(true)
+    }
   }
 }
 
 extension GitHubSearchItemCellModel: GitHubSearchItemCellModelOutputProtocol {
   var avatarImageData: Observable<Data> {
-    return gitHubUserModelRelay.compactMap { $0 }
-      .map { $0.avatarURL }
+    return gitHubFavoriteUserModelRelay.compactMap { $0 }
+      .map { $0.avatarURLString }
+      .compactMap { URL(string: $0) }
       .observeOn(ConcurrentDispatchQueueScheduler(qos: .default))
       .flatMap { avatarURL -> Observable<Data> in
         if let cachedData = ImageCache.get(forKey: avatarURL.absoluteString) {
@@ -62,17 +69,26 @@ extension GitHubSearchItemCellModel: GitHubSearchItemCellModelOutputProtocol {
   }
 
   var name: Observable<String> {
-    return gitHubUserModelRelay.compactMap { $0 }
-      .map { $0.username }
+    return gitHubFavoriteUserModelRelay.compactMap { $0 }
+      .compactMap { $0.username }
   }
 
   var scoreString: Observable<String> {
-    return gitHubUserModelRelay.compactMap { $0 }
+    return gitHubFavoriteUserModelRelay.compactMap { $0 }
       .map { "\($0.score)" }
   }
 
   var isFavorite: Observable<Bool> {
-    return gitHubUserModelRelay.compactMap { $0 }
-      .map { $0.isFavorite }
+    return isFavoriteRelay.compactMap { $0 }
   }
+}
+
+protocol GitHubSearchItemCellModelProtocol {
+  var input: GitHubSearchItemCellModelInputProtocol { get }
+  var output: GitHubSearchItemCellModelOutputProtocol { get }
+}
+
+extension GitHubSearchItemCellModel: GitHubSearchItemCellModelProtocol {
+  var input: GitHubSearchItemCellModelInputProtocol { return self }
+  var output: GitHubSearchItemCellModelOutputProtocol { return self }
 }

@@ -9,33 +9,17 @@
 import RxRelay
 import RxSwift
 
-import RxRelay
-import RxSwift
-
-protocol AvailableMeetingRoomViewModelProtocol {
-  var input: AvailableMeetingRoomViewModelInputProtocol { get }
-
-  var output: AvailableMeetingRoomViewModelOutputProtocol { get }
-}
-
 protocol AvailableMeetingRoomViewModelInputProtocol {
   func setAvailableMeetingRooms(_ model: AvailableMeetingRoomModel)
 }
 
 protocol AvailableMeetingRoomViewModelOutputProtocol {
   var availableMeetingRoomNames: Observable<[String]> { get }
-
   var numberOfAvailableMeetingRoomsString: Observable<String> { get }
 }
 
 final class AvailableMeetingRoomViewModel {
   private let availableMeetingRoomModelRelay = BehaviorRelay<AvailableMeetingRoomModel?>(value: nil)
-}
-
-extension AvailableMeetingRoomViewModel: AvailableMeetingRoomViewModelProtocol {
-  var input: AvailableMeetingRoomViewModelInputProtocol { return self }
-
-  var output: AvailableMeetingRoomViewModelOutputProtocol { return self }
 }
 
 extension AvailableMeetingRoomViewModel: AvailableMeetingRoomViewModelInputProtocol {
@@ -55,4 +39,14 @@ extension AvailableMeetingRoomViewModel: AvailableMeetingRoomViewModelOutputProt
       .map { $0.count }
       .map { "\($0)" }
   }
+}
+
+protocol AvailableMeetingRoomViewModelProtocol {
+  var input: AvailableMeetingRoomViewModelInputProtocol { get }
+  var output: AvailableMeetingRoomViewModelOutputProtocol { get }
+}
+
+extension AvailableMeetingRoomViewModel: AvailableMeetingRoomViewModelProtocol {
+  var input: AvailableMeetingRoomViewModelInputProtocol { return self }
+  var output: AvailableMeetingRoomViewModelOutputProtocol { return self }
 }

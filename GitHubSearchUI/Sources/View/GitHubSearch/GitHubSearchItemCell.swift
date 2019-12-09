@@ -33,14 +33,20 @@ final class GitHubSearchItemCell: BaseTableViewCell {
     avatarImageView.image = nil
     nameLabel.text = nil
     scoreLabel.text = nil
-    isFavoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
+    isFavoriteButton.setImage(.emptyStar, for: .normal)
   }
 
   func configure(with model: GitHubUser) {
-    viewModel.input.setModel(model)
+    viewModel.input.setFavoriteUser(model)
   }
 
   override func bindViewModel() {
+    isFavoriteButton.rx.tap
+      .subscribe(onNext: { [weak self] in
+        self?.viewModel.input.updateFavoriteStatus()
+      })
+      .disposed(by: disposeBag)
+
     viewModel.output.avatarImageData
       .map(UIImage.init)
       .bind(to: avatarImageView.rx.image)
@@ -55,8 +61,7 @@ final class GitHubSearchItemCell: BaseTableViewCell {
       .disposed(by: disposeBag)
 
     viewModel.output.isFavorite
-      .map { $0 ? "star.fill": "star" }
-      .map { UIImage(systemName: $0) }
+      .map { $0 ? UIImage.fullStar : UIImage.emptyStar }
       .bind(to: isFavoriteButton.rx.image())
       .disposed(by: disposeBag)
   }

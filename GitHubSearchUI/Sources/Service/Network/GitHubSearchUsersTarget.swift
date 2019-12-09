@@ -29,7 +29,7 @@ struct GitHubSearchUsersTarget: TargetProtocol {
     return ["search", "users"]
   }
 
-  var parameters: [String : String]?
+  var parameters: [String: String]?
 
   init(query: String, page: Int, sort: String? = nil, order: Order? = nil) {
     var parameters = [String: String]()

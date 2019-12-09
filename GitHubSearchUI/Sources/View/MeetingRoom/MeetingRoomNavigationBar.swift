@@ -12,23 +12,19 @@ import RxCocoa
 import RxSwift
 
 @IBDesignable
-final class ReusableNavigationBar: BaseView {
+final class MeetingRoomNavigationBar: BaseView {
   @IBOutlet fileprivate var dateLabel: UILabel!
   @IBOutlet fileprivate var settingButton: UIButton!
   @IBOutlet fileprivate var exitButton: UIButton!
 
-  var viewModel: ReusableNavigationBarModel! {
+  var viewModel: MeetingRoomNavigationBarModel! {
     didSet {
       bindViewModel()
     }
   }
 
   override func bindViewModel() {
-    Observable.just(Void())
-      .subscribe(onNext: { [weak self] in
-        self?.viewModel.input.setDate(.init())
-      })
-      .disposed(by: disposeBag)
+    viewModel.input.setDate(.init())
 
     viewModel.output.dateString
       .bind(to: dateLabel.rx.text)
@@ -42,7 +38,7 @@ final class ReusableNavigationBar: BaseView {
 
 // MARK: - Reactive Extension
 
-extension Reactive where Base: ReusableNavigationBar {
+extension Reactive where Base: MeetingRoomNavigationBar {
   var date: Binder<Date> {
     return .init(base) { target, date in
       target.viewModel.setDate(date)

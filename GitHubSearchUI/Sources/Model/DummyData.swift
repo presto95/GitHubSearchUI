@@ -16,11 +16,11 @@ struct DummyData {
   }()
 
   static let gitHubUsers: [GitHubUser] = {
-    let user = GitHubUser(id: 1, avatarURL: URL(string: "https://avatars0.githubusercontent.com/u/29768423?v=4")!, username: "presto95", score: 808.262)
+    let user = GitHubUser(id: 1, avatarURLString: "https://avatars0.githubusercontent.com/u/29768423?v=4", username: "presto95", score: 808.262)
     return .init(repeating: user, count: 20)
   }()
 
   static let availableMeetingRooms: AvailableMeetingRoomModel = {
-    return .init(names: ["대회의실1", "대회의실2", "회의실3", "회의실4", "회의실5", "회의실6", "회의실7", "회의실8"])
+    .init(names: ["대회의실1", "대회의실2", "회의실3", "회의실4", "회의실5", "회의실6", "회의실7", "회의실8"])
   }()
 }

@@ -32,18 +32,22 @@ final class GitHubSearchFavoriteViewController: BaseViewController {
 
     viewModel.output.favoriteUsers
       .bind(to: tableView.rx.items(GitHubSearchItemCell.self)) { _, model, cell in
+        cell.viewModel = GitHubSearchItemCellModel()
         cell.configure(with: model)
       }
       .disposed(by: disposeBag)
 
     viewModel.output.favoriteUsers
-      .map { $0.isEmpty }
-      .subscribe(onNext: { [weak self] isEmpty in
-        if isEmpty {
-          self?.addEmptyPresentationLabel()
-        } else {
-          self?.removeEmptyPresentationLabel()
-        }
+      .filter { $0.isEmpty }
+      .subscribe(onNext: { [weak self] _ in
+        self?.addEmptyPresentationLabel()
+      })
+      .disposed(by: disposeBag)
+
+    viewModel.output.favoriteUsers
+      .filter { !$0.isEmpty }
+      .subscribe(onNext: { [weak self] _ in
+        self?.removeEmptyPresentationLabel()
       })
       .disposed(by: disposeBag)
 

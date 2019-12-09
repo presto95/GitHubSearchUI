@@ -15,4 +15,8 @@ extension UIView {
     addSubview(subview)
     subview.snp.makeConstraints(constraintMaker)
   }
+
+  func addContentsView(_ contentsView: UIView) {
+    addSubview(contentsView) { $0.edges.equalToSuperview() }
+  }
 }

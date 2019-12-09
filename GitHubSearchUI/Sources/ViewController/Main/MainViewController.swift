@@ -25,8 +25,8 @@ final class MainViewController: BaseViewController {
   override func bindViewModel() {
     gitHubSearchButton.rx.tap
       .compactMap {
-        ViewControllerFactory
-          .instantiate(from: .gitHubSearch, type: GitHubSearchTabBarController.self)?.then {
+        UIViewController
+          .instantiate(from: .gitHubSearch, type: GitHubSearchTabBarController.self).then {
             $0.modalPresentationStyle = .fullScreen
           }
       }
@@ -35,8 +35,8 @@ final class MainViewController: BaseViewController {
 
     meetingRoomButton.rx.tap
       .compactMap {
-        ViewControllerFactory
-          .instantiate(from: .meetingRoom, type: MeetingRoomViewController.self)?.then {
+        UIViewController
+          .instantiate(from: .meetingRoom, type: MeetingRoomViewController.self).then {
             $0.modalPresentationStyle = .fullScreen
           }
       }

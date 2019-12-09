@@ -12,7 +12,7 @@ import RxCocoa
 import RxSwift
 
 final class AvailableMeetingRoomView: BaseView {
-  @IBOutlet private var availableMeetingRoomCountLabel: UILabel!
+  @IBOutlet private var numberOfAvailableMeetingRoomsLabel: UILabel!
   @IBOutlet private var collectionView: UICollectionView!
 
   var viewModel: AvailableMeetingRoomViewModelProtocol! {
@@ -29,18 +29,14 @@ final class AvailableMeetingRoomView: BaseView {
       $0.minimumInteritemSpacing = 0
     }
     collectionView.do {
-      $0.contentInset = .horizontal(13)
       $0.register(AvailableMeetingRoomCell.self)
+      $0.contentInset = .horizontal(13)
       $0.collectionViewLayout = layout
     }
   }
 
   override func bindViewModel() {
-    Observable.just(Void())
-      .subscribe(onNext: { [weak self] in
-        self?.viewModel.input.setAvailableMeetingRooms(DummyData.availableMeetingRooms)
-      })
-      .disposed(by: disposeBag)
+    viewModel.input.setAvailableMeetingRooms(DummyData.availableMeetingRooms)
 
     viewModel.output.availableMeetingRoomNames
       .bind(to: collectionView.rx.items(AvailableMeetingRoomCell.self)) { _, element, cell in
@@ -49,7 +45,7 @@ final class AvailableMeetingRoomView: BaseView {
       .disposed(by: disposeBag)
 
     viewModel.output.numberOfAvailableMeetingRoomsString
-      .bind(to: availableMeetingRoomCountLabel.rx.text)
+      .bind(to: numberOfAvailableMeetingRoomsLabel.rx.text)
       .disposed(by: disposeBag)
   }
 }

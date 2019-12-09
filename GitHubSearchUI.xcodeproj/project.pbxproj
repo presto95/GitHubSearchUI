@@ -21,18 +21,15 @@
 		194F1BF8239675BE00F95A6E /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1BF7239675BE00F95A6E /* NSObject+.swift */; };
 		194F1C05239679D000F95A6E /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C04239679D000F95A6E /* Storyboards.swift */; };
 		194F1C0723967BB300F95A6E /* Reactive+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C0623967BB300F95A6E /* Reactive+UIViewController.swift */; };
-		194F1C0923967CF900F95A6E /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C0823967CF900F95A6E /* ViewControllerFactory.swift */; };
-		194F1C0B23967D3600F95A6E /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C0A23967D3600F95A6E /* ViewFactory.swift */; };
 		194F1C0F239682B700F95A6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194F1C0E239682B700F95A6E /* Main.storyboard */; };
-		194F1C112396833800F95A6E /* MeetingRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C102396833800F95A6E /* MeetingRoomViewModel.swift */; };
 		194F1C132396835600F95A6E /* GitHubSearchMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C122396835600F95A6E /* GitHubSearchMainViewModel.swift */; };
 		194F1C152396837500F95A6E /* GitHubSearchFavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C142396837500F95A6E /* GitHubSearchFavoriteViewModel.swift */; };
 		194F1C18239684E700F95A6E /* GitHubSearchItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194F1C17239684E700F95A6E /* GitHubSearchItemCell.xib */; };
 		194F1C1A239684F500F95A6E /* GitHubSearchItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C19239684F500F95A6E /* GitHubSearchItemCell.swift */; };
 		194F1C1C2396883900F95A6E /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C1B2396883900F95A6E /* BaseTableViewCell.swift */; };
 		194F1C1F239688E400F95A6E /* GitHubSearchUsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C1E239688E400F95A6E /* GitHubSearchUsersResponse.swift */; };
-		194F1C2323968F7400F95A6E /* ReusableNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C2223968F7400F95A6E /* ReusableNavigationBar.swift */; };
-		194F1C2523968F8600F95A6E /* ReusableNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194F1C2423968F8600F95A6E /* ReusableNavigationBar.xib */; };
+		194F1C2323968F7400F95A6E /* MeetingRoomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C2223968F7400F95A6E /* MeetingRoomNavigationBar.swift */; };
+		194F1C2523968F8600F95A6E /* MeetingRoomNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194F1C2423968F8600F95A6E /* MeetingRoomNavigationBar.xib */; };
 		194F1C2723968FF300F95A6E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C2623968FF300F95A6E /* BaseView.swift */; };
 		194F1C322396998300F95A6E /* AvailableMeetingRoomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194F1C312396998300F95A6E /* AvailableMeetingRoomView.xib */; };
 		194F1C342396999000F95A6E /* AvailableMeetingRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C332396999000F95A6E /* AvailableMeetingRoomView.swift */; };
@@ -51,13 +48,17 @@
 		194F1C522396AE0300F95A6E /* RadioButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C512396AE0300F95A6E /* RadioButtonGroup.swift */; };
 		194F1C542396AE0B00F95A6E /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C532396AE0B00F95A6E /* RadioButton.swift */; };
 		194F1C582396C70400F95A6E /* UIView+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C572396C70300F95A6E /* UIView+SnapKit.swift */; };
-		194F1C5A2396CAD400F95A6E /* ReusableNavigationBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C592396CAD400F95A6E /* ReusableNavigationBarModel.swift */; };
+		194F1C5A2396CAD400F95A6E /* MeetingRoomNavigationBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C592396CAD400F95A6E /* MeetingRoomNavigationBarModel.swift */; };
 		194F1C5C2396CBF400F95A6E /* MeetingRoomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C5B2396CBF400F95A6E /* MeetingRoomTableView.swift */; };
 		194F1C5E2396CBFC00F95A6E /* MeetingRoomTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194F1C5D2396CBFC00F95A6E /* MeetingRoomTableView.xib */; };
 		194F1C602396CCE900F95A6E /* MeetingRoomTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C5F2396CCE900F95A6E /* MeetingRoomTableViewModel.swift */; };
 		194F1C632396CD5300F95A6E /* MeetingRoomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F1C612396CD5300F95A6E /* MeetingRoomTableCell.swift */; };
 		194F1C642396CD5300F95A6E /* MeetingRoomTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194F1C622396CD5300F95A6E /* MeetingRoomTableCell.xib */; };
 		194F1C662396D48C00F95A6E /* meeting_room.json in Resources */ = {isa = PBXBuildFile; fileRef = 194F1C652396D48C00F95A6E /* meeting_room.json */; };
+		199922E0239E0BCD0028108E /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199922DF239E0BCD0028108E /* PersistenceService.swift */; };
+		199922E2239E17E80028108E /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199922E1239E17E80028108E /* UIViewController+.swift */; };
+		199922E4239E18020028108E /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199922E3239E18020028108E /* UIView+.swift */; };
+		199922E6239E18180028108E /* UIAlertController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199922E5239E18180028108E /* UIAlertController+.swift */; };
 		199F941B23978A510060E273 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F941A23978A510060E273 /* CALayer+.swift */; };
 		199F941D2397DFD00060E273 /* CurrentTimePointerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 199F941C2397DFD00060E273 /* CurrentTimePointerView.xib */; };
 		199F94212397E1EF0060E273 /* CurrentTimePointerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F94202397E1EF0060E273 /* CurrentTimePointerView.swift */; };
@@ -73,11 +74,10 @@
 		199F94382398E4100060E273 /* Locale+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F94372398E4100060E273 /* Locale+.swift */; };
 		199F943A23990FB20060E273 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F943923990FB20060E273 /* GitHubAPI.swift */; };
 		199F943C2399179F0060E273 /* Result+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F943B2399179F0060E273 /* Result+.swift */; };
-		199F9440239930890060E273 /* PersistenceManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F943F239930890060E273 /* PersistenceManagerProtocol.swift */; };
-		199F9444239932540060E273 /* AlertControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F9443239932540060E273 /* AlertControllerBuilder.swift */; };
-		199F944623995B3F0060E273 /* GitHubFavoriteUserFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F944523995B3F0060E273 /* GitHubFavoriteUserFileManager.swift */; };
 		199F944B239A41A60060E273 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F944A239A41A60060E273 /* Cache.swift */; };
 		199F944E239A47750060E273 /* GitHubSearchItemCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F944D239A47750060E273 /* GitHubSearchItemCellModel.swift */; };
+		199F9454239B7E360060E273 /* GitHubSearchUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 199F9452239B7E360060E273 /* GitHubSearchUI.xcdatamodeld */; };
+		199F9456239B81E00060E273 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F9455239B81E00060E273 /* UIImage+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,18 +96,15 @@
 		194F1BF7239675BE00F95A6E /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		194F1C04239679D000F95A6E /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		194F1C0623967BB300F95A6E /* Reactive+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+UIViewController.swift"; sourceTree = "<group>"; };
-		194F1C0823967CF900F95A6E /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
-		194F1C0A23967D3600F95A6E /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		194F1C0E239682B700F95A6E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		194F1C102396833800F95A6E /* MeetingRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingRoomViewModel.swift; sourceTree = "<group>"; };
 		194F1C122396835600F95A6E /* GitHubSearchMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchMainViewModel.swift; sourceTree = "<group>"; };
 		194F1C142396837500F95A6E /* GitHubSearchFavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchFavoriteViewModel.swift; sourceTree = "<group>"; };
 		194F1C17239684E700F95A6E /* GitHubSearchItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GitHubSearchItemCell.xib; sourceTree = "<group>"; };
 		194F1C19239684F500F95A6E /* GitHubSearchItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchItemCell.swift; sourceTree = "<group>"; };
 		194F1C1B2396883900F95A6E /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		194F1C1E239688E400F95A6E /* GitHubSearchUsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchUsersResponse.swift; sourceTree = "<group>"; };
-		194F1C2223968F7400F95A6E /* ReusableNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableNavigationBar.swift; sourceTree = "<group>"; };
-		194F1C2423968F8600F95A6E /* ReusableNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReusableNavigationBar.xib; sourceTree = "<group>"; };
+		194F1C2223968F7400F95A6E /* MeetingRoomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingRoomNavigationBar.swift; sourceTree = "<group>"; };
+		194F1C2423968F8600F95A6E /* MeetingRoomNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeetingRoomNavigationBar.xib; sourceTree = "<group>"; };
 		194F1C2623968FF300F95A6E /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		194F1C312396998300F95A6E /* AvailableMeetingRoomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableMeetingRoomView.xib; sourceTree = "<group>"; };
 		194F1C332396999000F95A6E /* AvailableMeetingRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableMeetingRoomView.swift; sourceTree = "<group>"; };
@@ -126,13 +123,17 @@
 		194F1C512396AE0300F95A6E /* RadioButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonGroup.swift; sourceTree = "<group>"; };
 		194F1C532396AE0B00F95A6E /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		194F1C572396C70300F95A6E /* UIView+SnapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SnapKit.swift"; sourceTree = "<group>"; };
-		194F1C592396CAD400F95A6E /* ReusableNavigationBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableNavigationBarModel.swift; sourceTree = "<group>"; };
+		194F1C592396CAD400F95A6E /* MeetingRoomNavigationBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingRoomNavigationBarModel.swift; sourceTree = "<group>"; };
 		194F1C5B2396CBF400F95A6E /* MeetingRoomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingRoomTableView.swift; sourceTree = "<group>"; };
 		194F1C5D2396CBFC00F95A6E /* MeetingRoomTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeetingRoomTableView.xib; sourceTree = "<group>"; };
 		194F1C5F2396CCE900F95A6E /* MeetingRoomTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingRoomTableViewModel.swift; sourceTree = "<group>"; };
 		194F1C612396CD5300F95A6E /* MeetingRoomTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingRoomTableCell.swift; sourceTree = "<group>"; };
 		194F1C622396CD5300F95A6E /* MeetingRoomTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeetingRoomTableCell.xib; sourceTree = "<group>"; };
 		194F1C652396D48C00F95A6E /* meeting_room.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = meeting_room.json; sourceTree = "<group>"; };
+		199922DF239E0BCD0028108E /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		199922E1239E17E80028108E /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		199922E3239E18020028108E /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		199922E5239E18180028108E /* UIAlertController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+.swift"; sourceTree = "<group>"; };
 		199F941A23978A510060E273 /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		199F941C2397DFD00060E273 /* CurrentTimePointerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentTimePointerView.xib; sourceTree = "<group>"; };
 		199F94202397E1EF0060E273 /* CurrentTimePointerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTimePointerView.swift; sourceTree = "<group>"; };
@@ -148,11 +149,10 @@
 		199F94372398E4100060E273 /* Locale+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+.swift"; sourceTree = "<group>"; };
 		199F943923990FB20060E273 /* GitHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPI.swift; sourceTree = "<group>"; };
 		199F943B2399179F0060E273 /* Result+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+.swift"; sourceTree = "<group>"; };
-		199F943F239930890060E273 /* PersistenceManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManagerProtocol.swift; sourceTree = "<group>"; };
-		199F9443239932540060E273 /* AlertControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerBuilder.swift; sourceTree = "<group>"; };
-		199F944523995B3F0060E273 /* GitHubFavoriteUserFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubFavoriteUserFileManager.swift; sourceTree = "<group>"; };
 		199F944A239A41A60060E273 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		199F944D239A47750060E273 /* GitHubSearchItemCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchItemCellModel.swift; sourceTree = "<group>"; };
+		199F9453239B7E360060E273 /* GitHubSearchUI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GitHubSearchUI.xcdatamodel; sourceTree = "<group>"; };
+		199F9455239B81E00060E273 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		5909979A903DE730286EB24B /* Pods_GitHubSearchUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubSearchUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B293DAAFADDCAC920DB184C6 /* Pods-GitHubSearchUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSearchUI.debug.xcconfig"; path = "Target Support Files/Pods-GitHubSearchUI/Pods-GitHubSearchUI.debug.xcconfig"; sourceTree = "<group>"; };
 		CC8471FE0C4AC9E696932DB2 /* Pods-GitHubSearchUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSearchUI.release.xcconfig"; path = "Target Support Files/Pods-GitHubSearchUI/Pods-GitHubSearchUI.release.xcconfig"; sourceTree = "<group>"; };
@@ -204,6 +204,7 @@
 				194F1C652396D48C00F95A6E /* meeting_room.json */,
 				194F1BDA239671A300F95A6E /* LaunchScreen.storyboard */,
 				194F1BD8239671A300F95A6E /* Assets.xcassets */,
+				199F9452239B7E360060E273 /* GitHubSearchUI.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -220,8 +221,6 @@
 		194F1BE5239671D300F95A6E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				199F944C239A43510060E273 /* Protocol */,
-				199F944723995BA80060E273 /* Utility */,
 				199F943D239930720060E273 /* Service */,
 				194F1C1D239688DC00F95A6E /* Model */,
 				194F1C16239684D000F95A6E /* View */,
@@ -246,6 +245,10 @@
 				199F94352398E1B10060E273 /* UIEdgeInsets+.swift */,
 				199F94372398E4100060E273 /* Locale+.swift */,
 				199F943B2399179F0060E273 /* Result+.swift */,
+				199F9455239B81E00060E273 /* UIImage+.swift */,
+				199922E1239E17E80028108E /* UIViewController+.swift */,
+				199922E3239E18020028108E /* UIView+.swift */,
+				199922E5239E18180028108E /* UIAlertController+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -319,7 +322,6 @@
 			children = (
 				194F1BEA239672B900F95A6E /* MeetingRoom.storyboard */,
 				194F1BEC239672E900F95A6E /* MeetingRoomViewController.swift */,
-				194F1C102396833800F95A6E /* MeetingRoomViewModel.swift */,
 			);
 			path = MeetingRoom;
 			sourceTree = "<group>";
@@ -337,6 +339,9 @@
 		194F1C302396990700F95A6E /* MeetingRoom */ = {
 			isa = PBXGroup;
 			children = (
+				194F1C2423968F8600F95A6E /* MeetingRoomNavigationBar.xib */,
+				194F1C2223968F7400F95A6E /* MeetingRoomNavigationBar.swift */,
+				194F1C592396CAD400F95A6E /* MeetingRoomNavigationBarModel.swift */,
 				194F1C312396998300F95A6E /* AvailableMeetingRoomView.xib */,
 				194F1C332396999000F95A6E /* AvailableMeetingRoomView.swift */,
 				194F1C412396A71900F95A6E /* AvailableMeetingRoomViewModel.swift */,
@@ -358,9 +363,6 @@
 		194F1C4D2396ADC200F95A6E /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
-				194F1C2423968F8600F95A6E /* ReusableNavigationBar.xib */,
-				194F1C2223968F7400F95A6E /* ReusableNavigationBar.swift */,
-				194F1C592396CAD400F95A6E /* ReusableNavigationBarModel.swift */,
 				194F1C4F2396ADF500F95A6E /* RadioButton.xib */,
 				194F1C532396AE0B00F95A6E /* RadioButton.swift */,
 				194F1C512396AE0300F95A6E /* RadioButtonGroup.swift */,
@@ -378,6 +380,14 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		199922DE239E0BC00028108E /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				199922DF239E0BCD0028108E /* PersistenceService.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		199F94222397E5510060E273 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,30 +403,11 @@
 		199F943D239930720060E273 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				199922DE239E0BC00028108E /* Persistence */,
 				199F9449239A419A0060E273 /* Cache */,
-				199F943E2399307B0060E273 /* Persistence */,
 				199F94222397E5510060E273 /* Network */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		199F943E2399307B0060E273 /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-				199F943F239930890060E273 /* PersistenceManagerProtocol.swift */,
-				199F944523995B3F0060E273 /* GitHubFavoriteUserFileManager.swift */,
-			);
-			path = Persistence;
-			sourceTree = "<group>";
-		};
-		199F944723995BA80060E273 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				194F1C0823967CF900F95A6E /* ViewControllerFactory.swift */,
-				194F1C0A23967D3600F95A6E /* ViewFactory.swift */,
-				199F9443239932540060E273 /* AlertControllerBuilder.swift */,
-			);
-			path = Utility;
 			sourceTree = "<group>";
 		};
 		199F9449239A419A0060E273 /* Cache */ = {
@@ -425,13 +416,6 @@
 				199F944A239A41A60060E273 /* Cache.swift */,
 			);
 			path = Cache;
-			sourceTree = "<group>";
-		};
-		199F944C239A43510060E273 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocol;
 			sourceTree = "<group>";
 		};
 		408F39A223475B855356164D /* Frameworks */ = {
@@ -522,7 +506,7 @@
 				194F1C642396CD5300F95A6E /* MeetingRoomTableCell.xib in Resources */,
 				194F1BEB239672B900F95A6E /* MeetingRoom.storyboard in Resources */,
 				194F1BD9239671A300F95A6E /* Assets.xcassets in Resources */,
-				194F1C2523968F8600F95A6E /* ReusableNavigationBar.xib in Resources */,
+				194F1C2523968F8600F95A6E /* MeetingRoomNavigationBar.xib in Resources */,
 				194F1C382396A33E00F95A6E /* AvailableMeetingRoomCell.xib in Resources */,
 				194F1BE72396729200F95A6E /* GitHubSearch.storyboard in Resources */,
 				194F1C322396998300F95A6E /* AvailableMeetingRoomView.xib in Resources */,
@@ -581,22 +565,20 @@
 				194F1C602396CCE900F95A6E /* MeetingRoomTableViewModel.swift in Sources */,
 				194F1C542396AE0B00F95A6E /* RadioButton.swift in Sources */,
 				199F944E239A47750060E273 /* GitHubSearchItemCellModel.swift in Sources */,
-				199F9444239932540060E273 /* AlertControllerBuilder.swift in Sources */,
+				199922E6239E18180028108E /* UIAlertController+.swift in Sources */,
 				194F1C3E2396A5EF00F95A6E /* UICollectionView+.swift in Sources */,
 				199F94212397E1EF0060E273 /* CurrentTimePointerView.swift in Sources */,
 				199F943C2399179F0060E273 /* Result+.swift in Sources */,
 				194F1C442396A7E800F95A6E /* AvailableMeetingRoomModel.swift in Sources */,
-				199F944623995B3F0060E273 /* GitHubFavoriteUserFileManager.swift in Sources */,
 				199F94282397E74E0060E273 /* TargetProtocol.swift in Sources */,
 				199F942C2397E7840060E273 /* TargetVersion.swift in Sources */,
 				199F944B239A41A60060E273 /* Cache.swift in Sources */,
 				194F1C4C2396AD2800F95A6E /* MeetingRoomFilteringView.swift in Sources */,
 				194F1C5C2396CBF400F95A6E /* MeetingRoomTableView.swift in Sources */,
-				194F1C112396833800F95A6E /* MeetingRoomViewModel.swift in Sources */,
 				194F1BEF2396730300F95A6E /* GitHubSearchMainViewController.swift in Sources */,
 				194F1BF12396730900F95A6E /* GitHubSearchFavoriteViewController.swift in Sources */,
-				199F9440239930890060E273 /* PersistenceManagerProtocol.swift in Sources */,
-				194F1C5A2396CAD400F95A6E /* ReusableNavigationBarModel.swift in Sources */,
+				199922E4239E18020028108E /* UIView+.swift in Sources */,
+				194F1C5A2396CAD400F95A6E /* MeetingRoomNavigationBarModel.swift in Sources */,
 				194F1C1C2396883900F95A6E /* BaseTableViewCell.swift in Sources */,
 				194F1C05239679D000F95A6E /* Storyboards.swift in Sources */,
 				199F94322398DE0F0060E273 /* DummyData.swift in Sources */,
@@ -604,9 +586,12 @@
 				194F1C522396AE0300F95A6E /* RadioButtonGroup.swift in Sources */,
 				194F1C402396A64B00F95A6E /* UITableView+.swift in Sources */,
 				199F94382398E4100060E273 /* Locale+.swift in Sources */,
+				199F9454239B7E360060E273 /* GitHubSearchUI.xcdatamodeld in Sources */,
 				199F943023980C480060E273 /* GitHubSearchTabBarController.swift in Sources */,
+				199922E0239E0BCD0028108E /* PersistenceService.swift in Sources */,
 				199F94342398E12D0060E273 /* MeetingRoomModel.swift in Sources */,
 				194F1C0723967BB300F95A6E /* Reactive+UIViewController.swift in Sources */,
+				199F9456239B81E00060E273 /* UIImage+.swift in Sources */,
 				199F94262397E7210060E273 /* NetworkManager.swift in Sources */,
 				199F942E23980A3D0060E273 /* GitHubUser.swift in Sources */,
 				199F94362398E1B10060E273 /* UIEdgeInsets+.swift in Sources */,
@@ -614,19 +599,18 @@
 				199F94242397E6AD0060E273 /* GitHubSearchUsersTarget.swift in Sources */,
 				194F1C342396999000F95A6E /* AvailableMeetingRoomView.swift in Sources */,
 				194F1C462396A92400F95A6E /* Reactive+UICollectionView.swift in Sources */,
-				194F1C0923967CF900F95A6E /* ViewControllerFactory.swift in Sources */,
 				194F1C2723968FF300F95A6E /* BaseView.swift in Sources */,
 				194F1BED239672E900F95A6E /* MeetingRoomViewController.swift in Sources */,
 				194F1C132396835600F95A6E /* GitHubSearchMainViewModel.swift in Sources */,
 				194F1C1A239684F500F95A6E /* GitHubSearchItemCell.swift in Sources */,
 				194F1C632396CD5300F95A6E /* MeetingRoomTableCell.swift in Sources */,
+				199922E2239E17E80028108E /* UIViewController+.swift in Sources */,
 				194F1C422396A71900F95A6E /* AvailableMeetingRoomViewModel.swift in Sources */,
 				194F1C3A2396A37000F95A6E /* BaseCollectionViewCell.swift in Sources */,
-				194F1C0B23967D3600F95A6E /* ViewFactory.swift in Sources */,
 				194F1BD4239671A100F95A6E /* MainViewController.swift in Sources */,
 				194F1C152396837500F95A6E /* GitHubSearchFavoriteViewModel.swift in Sources */,
 				194F1BF8239675BE00F95A6E /* NSObject+.swift in Sources */,
-				194F1C2323968F7400F95A6E /* ReusableNavigationBar.swift in Sources */,
+				194F1C2323968F7400F95A6E /* MeetingRoomNavigationBar.swift in Sources */,
 				194F1C1F239688E400F95A6E /* GitHubSearchUsersResponse.swift in Sources */,
 				194F1C582396C70400F95A6E /* UIView+SnapKit.swift in Sources */,
 				194F1BD0239671A100F95A6E /* AppDelegate.swift in Sources */,
@@ -824,6 +808,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		199F9452239B7E360060E273 /* GitHubSearchUI.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				199F9453239B7E360060E273 /* GitHubSearchUI.xcdatamodel */,
+			);
+			currentVersion = 199F9453239B7E360060E273 /* GitHubSearchUI.xcdatamodel */;
+			path = GitHubSearchUI.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 194F1BC4239671A100F95A6E /* Project object */;
 }

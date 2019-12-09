@@ -11,19 +11,24 @@ import Foundation
 struct GitHubUser: Codable {
   let id: Int
 
-  let avatarURL: URL
+  let avatarURLString: String
 
   let username: String
-  
-  let score: Double
 
-  let isFavorite: Bool = false
+  let score: Double
 
   static func make(from response: GitHubSearchUsersResponse) -> [GitHubUser] {
     return response.items
       .map { GitHubUser(id: $0.id,
-                        avatarURL: URL(string: $0.avatarURL)!,
+                        avatarURLString: $0.avatarURL,
                         username: $0.login,
                         score: $0.score) }
+  }
+
+  static func make(from persistence: GitHubFavoriteUser) -> GitHubUser {
+    return .init(id: Int(persistence.id),
+                 avatarURLString: persistence.avatarURL ?? "",
+                 username: persistence.username ?? "",
+                 score: persistence.score)
   }
 }

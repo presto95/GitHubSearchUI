@@ -38,7 +38,7 @@ final class GitHubAPI: GitHubAPIProtocol {
             observer.onNext(.failure(error))
           }
           observer.onCompleted()
-      }
+        }
       return Disposables.create()
     }
   }

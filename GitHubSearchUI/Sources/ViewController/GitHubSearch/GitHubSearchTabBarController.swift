@@ -11,9 +11,16 @@ import UIKit
 final class GitHubSearchTabBarController: UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
-    ((viewControllers?.first as? UINavigationController)?.topViewController as? GitHubSearchMainViewController)?
-      .viewModel = GitHubSearchMainViewModel()
-    ((viewControllers?.last as? UINavigationController)?.topViewController as? GitHubSearchFavoriteViewController)?
-      .viewModel = GitHubSearchFavoriteViewModel()
+    topViewController(of: viewControllers?[0],
+                      as: GitHubSearchMainViewController.self)?.viewModel = GitHubSearchMainViewModel()
+    topViewController(of: viewControllers?[1],
+                      as: GitHubSearchFavoriteViewController.self)?.viewModel = GitHubSearchFavoriteViewModel()
+  }
+}
+
+private extension GitHubSearchTabBarController {
+  func topViewController<ViewController: UIViewController>(of viewController: UIViewController?,
+                                                           as type: ViewController.Type) -> ViewController? {
+    return (viewController as? UINavigationController)?.topViewController as? ViewController
   }
 }

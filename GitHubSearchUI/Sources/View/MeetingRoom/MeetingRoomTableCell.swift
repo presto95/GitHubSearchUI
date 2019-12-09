@@ -34,17 +34,22 @@ final class MeetingRoomTableCell: BaseTableViewCell {
     nameLabel.text = meetingRoomModel.name
     locationLabel.text = meetingRoomModel.location
     meetingRoomModel.reservations.forEach {
-      let startTimeBarIndex = timeBarIndex(fromHour: $0.startHour, minute: $0.startMinute)
-      let endTimeBarIndex = timeBarIndex(fromHour: $0.endHour, minute: $0.endMinute)
-      (startTimeBarIndex ..< endTimeBarIndex).forEach {
-        timeBars[$0].backgroundColor = .secondarySystemBackground
-      }
+      setTimeBar(from: (hour: $0.startHour, minute: $0.startMinute),
+                 to: (hour: $0.endHour, minute: $0.endMinute))
     }
     addCurrentTimePointerView()
   }
 }
 
 private extension MeetingRoomTableCell {
+  func setTimeBar(from startTime: (hour: Int, minute: Int), to endTime: (hour: Int, minute: Int)) {
+    let startTimeBarIndex = timeBarIndex(fromHour: startTime.hour, minute: startTime.minute)
+    let endTimeBarIndex = timeBarIndex(fromHour: endTime.hour, minute: endTime.minute)
+    (startTimeBarIndex ..< endTimeBarIndex).forEach {
+      timeBars[$0].backgroundColor = .secondarySystemBackground
+    }
+  }
+
   func timeBarIndex(fromHour hour: Int, minute: Int) -> Int {
     var resultIndex = hourIndexForTimeBars(hour)
     if !isMinuteInHalfHour(minute) {
@@ -65,9 +70,9 @@ private extension MeetingRoomTableCell {
     let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: Date())
     guard let hour = dateComponents.hour,
       let minute = dateComponents.minute,
-      hour >= 9 && hour <= 18 else { return }
+      hour >= 9, hour <= 18 else { return }
     let currentTimeBarIndex = timeBarIndex(fromHour: hour, minute: minute)
-    currentTimePointerView = ViewFactory.instantiate(CurrentTimePointerView.self)!
+    currentTimePointerView = UIView.instantiate(CurrentTimePointerView.self)
     let currentTimePointerViewIndex = currentTimeBarIndex > timeBars.count - 1
       ? timeBars.count - 1
       : currentTimeBarIndex

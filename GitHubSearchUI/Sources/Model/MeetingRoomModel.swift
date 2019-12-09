@@ -43,4 +43,3 @@ extension MeetingRoomModel.Reservation {
     return Int(minuteString)!
   }
 }
-
